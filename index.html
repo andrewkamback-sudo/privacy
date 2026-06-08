@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlowState Logic</title>
+  <meta name="description" content="Pixel-art programming lessons that fit in your pocket.">
+  <style>
+    :root {
+      --bg: #0d0800;
+      --surface: #1a1208;
+      --text: #f5e6d3;
+      --muted: #9a8771;
+      --accent: #ff5722;
+      --border: #3a2a18;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 64px 24px 32px;
+      text-align: center;
+      flex: 1;
+    }
+    h1 {
+      font-size: 40px;
+      margin: 0 0 12px;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 48px;
+    }
+    .links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .links a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 12px 24px;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      transition: border-color 0.15s;
+    }
+    .links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>FlowState Logic</h1>
+    <p class="tagline">Pixel-art programming lessons. Currently in private alpha.</p>
+    <nav class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+  </main>
+  <footer>© FlowState Logic.</footer>
+</body>
+</html>
