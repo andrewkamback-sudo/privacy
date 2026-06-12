@@ -1,0 +1,8 @@
+title: Cinderway Interactive
+description: Indie game studio. Currently shipping FlowState Logic.
+markdown: kramdown
+theme: null
+
+exclude:
+  - README.md
+  - .gitignore
