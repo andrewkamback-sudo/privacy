@@ -131,7 +131,7 @@ a { color: inherit; }
   top: 0;
   z-index: 20;
   border-bottom: 4px solid var(--color-brick);
-  background: rgba(244, 237, 225, 0.94);
+  background: rgba(244, 237, 225, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -441,12 +441,20 @@ h2 {
 .cta-box h2 { font-size: clamp(1.2rem, 2.4vw, 1.8rem); }
 .cta-box p { margin: 0.5rem 0 0; color: var(--color-muted); max-width: 56ch; }
 
-/* ---------- 7. Footer ---------- */
+/* ---------- 7. Footer ----------
+   Mirror the header inversion: warm cream bar with dark ink text +
+   brick accents. Keeps the brick stripe along the top edge to echo
+   the header's bottom stripe. */
 .site-footer {
   padding: 1.75rem 0;
   border-top: 4px solid var(--color-brick);
-  color: var(--color-muted);
+  background: rgba(244, 237, 225, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--color-ink);
   margin-top: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-inner {
@@ -465,6 +473,7 @@ h2 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.85rem;
+  color: var(--color-ink);
 }
 
 .footer-brand img {
@@ -483,13 +492,13 @@ h2 {
 }
 
 .footer-nav a {
-  color: var(--color-muted);
+  color: var(--color-ink);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .footer-nav a:hover,
-.footer-nav a:focus-visible { color: var(--color-ember); }
+.footer-nav a:focus-visible { color: var(--color-brick); }
 
 /* ---------- Breadcrumb (for sub-sites) ---------- */
 .breadcrumb {
