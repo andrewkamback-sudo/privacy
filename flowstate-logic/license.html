@@ -23,7 +23,10 @@
           <img class="brand-logo" src="../assets/svg/cinderway-logo.png" alt="" width="64" height="64">
           <img class="brand-wordmark" src="../assets/svg/cinderway-wordmark.png" alt="Cinderway Interactive">
         </a>
-        <nav class="site-nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu" data-nav-toggle>
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Primary" data-site-nav>
           <ul>
             <li><a href="../#projects">Projects</a></li>
             <li><a href="/flowstate-logic/">FlowState Logic</a></li>
