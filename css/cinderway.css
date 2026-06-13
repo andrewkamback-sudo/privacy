@@ -221,7 +221,6 @@ a { color: inherit; }
 .kicker {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
   margin: 0 0 1.1rem;
   color: var(--color-gold);
   font-size: 0.75rem;
@@ -230,10 +229,16 @@ a { color: inherit; }
   text-transform: uppercase;
 }
 
+/* Three pixel-block decoration before the text. Box-shadow trick
+   paints two extra blocks at +12px and +24px; margin-right has to
+   clear the rightmost block (≈34px) plus a little breathing room
+   so the text never sits on top of the dots. */
 .kicker::before {
   content: '';
   width: 0.6rem;
   height: 0.6rem;
+  flex: 0 0 auto;
+  margin-right: 2.4rem;
   background: var(--color-ember);
   box-shadow: 12px 0 0 var(--color-brick), 24px 0 0 var(--color-gold);
 }
@@ -521,15 +526,46 @@ h2 {
 .breadcrumb-sep { margin: 0 0.4rem; color: var(--color-charcoal); }
 
 /* ---------- 8. Responsive ---------- */
+/* Tablet + small desktop tweaks (≤ 760px). Shrink the brand-mark
+   and nav so they still fit on one row at this size. */
 @media (max-width: 760px) {
   .card-grid { grid-template-columns: 1fr; }
   .cta-box { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
-  .site-nav ul { gap: 0; }
+  .site-nav ul { gap: 0; flex-wrap: wrap; justify-content: flex-end; }
   .site-nav a { padding: 0.5rem 0.6rem; font-size: 0.72rem; }
-  .header-inner { min-height: 76px; }
+  .header-inner { min-height: 76px; padding-block: 0.5rem; }
   .brand-logo { width: 48px; height: 48px; }
   .brand-wordmark { height: 36px; }
+  .hero { padding: clamp(2rem, 5vw, 3rem) 0 clamp(2rem, 5vw, 3rem); }
+  .kicker::before { margin-right: 2.1rem; }
+  .breadcrumb { padding-top: 0.6rem; font-size: 0.72rem; }
+}
+
+/* Phone breakpoint (≤ 540px). Stack header so brand-mark and nav
+   each get their own row, and drop the wordmark to its smallest
+   size so the logo + wordmark fit comfortably even on a 320px
+   viewport. */
+@media (max-width: 540px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: auto;
+    padding-block: 0.85rem;
+  }
+  .brand-mark { gap: 0.6rem; }
+  .brand-logo { width: 40px; height: 40px; }
+  .brand-wordmark { height: 28px; }
+  .site-nav { width: 100%; }
+  .site-nav ul { justify-content: center; }
+  .site-nav a { padding: 0.45rem 0.55rem; font-size: 0.68rem; letter-spacing: 0.04em; }
+  .container { width: min(calc(100% - 1.5rem), var(--max-width)); }
+  h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+  h2 { font-size: clamp(1.25rem, 5.5vw, 1.7rem); }
+  .hero-actions { width: 100%; }
+  .hero-actions .button { flex: 1 1 100%; }
+  .breadcrumb { white-space: normal; line-height: 1.5; }
 }
 
 /* ---------- 9. Motion + accessibility ---------- */
