@@ -25,8 +25,7 @@ body {
   font-family: var(--font-body);
   color: var(--color-cream);
   background:
-    radial-gradient(circle at 18% 8%,  rgba(242, 104, 34, 0.16), transparent 28rem),
-    radial-gradient(circle at 88% 18%, rgba(255, 194, 90, 0.08), transparent 26rem),
+    radial-gradient(circle at 12% 6%,  rgba(242, 104, 34, 0.14), transparent 26rem),
     linear-gradient(180deg, #101114 0%, var(--color-ink) 45%, #0b0b0d 100%);
   line-height: 1.6;
   min-height: 100vh;
@@ -34,6 +33,7 @@ body {
   flex-direction: column;
 }
 
+/* Subtle pixel grid overlay — fades out before reaching the bottom scene */
 body::before {
   content: '';
   position: fixed;
@@ -43,8 +43,37 @@ body::before {
     linear-gradient(rgba(244, 237, 225, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(244, 237, 225, 0.035) 1px, transparent 1px);
   background-size: 32px 32px;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 70%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 60%);
   z-index: 0;
+}
+
+/* Decorative pixel-art scene anchored bottom-right.
+   Fixed so it stays put while scrolling, behind content, faded so
+   it never competes with foreground text. Hidden on small screens
+   to keep the mobile reading column clean. */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: clamp(260px, 32vw, 520px);
+  aspect-ratio: 622 / 941;
+  background-image: url('../assets/banners/cinderway-scene.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  pointer-events: none;
+  opacity: 0.42;
+  mask-image: linear-gradient(to top, black 30%, transparent 95%),
+              linear-gradient(to left, black 70%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(to top, black 30%, transparent 95%);
+  z-index: 0;
+}
+
+@media (max-width: 760px) {
+  body::after { display: none; }
 }
 
 img, svg { max-width: 100%; }

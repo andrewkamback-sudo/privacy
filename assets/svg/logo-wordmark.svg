@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" role="img" aria-labelledby="title desc">
-  <title id="title">Cinderway Interactive wordmark</title>
-  <desc id="desc">Pixel-inspired wordmark for Cinderway Interactive.</desc>
-  <rect width="720" height="150" fill="transparent"/>
-  <text x="360" y="78" text-anchor="middle" font-family="'Press Start 2P', monospace" font-size="46" fill="#1B1B1E" letter-spacing="2">CINDERWAY</text>
-  <rect x="201" y="105" width="8" height="8" fill="#F26822"/>
-  <text x="360" y="114" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#B03A2E" letter-spacing="14">INTERACTIVE</text>
-  <rect x="511" y="105" width="8" height="8" fill="#F26822"/>
-</svg>
