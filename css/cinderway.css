@@ -1,0 +1,500 @@
+@import url('./fonts.css');
+@import url('./tokens.css');
+
+/* =============================================================
+   Cinderway Interactive — shared site styles for the
+   www.cinderwayinteractive.com Pages site. Mirrors the
+   Pixel Ember source theme.
+
+   1. Base
+   2. Header / nav
+   3. Hero (landing pages)
+   4. Section header utility
+   5. Card grid + project tiles
+   6. CTA box
+   7. Footer
+   8. Responsive
+   9. Motion + accessibility
+   ============================================================= */
+
+/* ---------- 1. Base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-cream);
+  background:
+    radial-gradient(circle at 18% 8%,  rgba(242, 104, 34, 0.16), transparent 28rem),
+    radial-gradient(circle at 88% 18%, rgba(255, 194, 90, 0.08), transparent 26rem),
+    linear-gradient(180deg, #101114 0%, var(--color-ink) 45%, #0b0b0d 100%);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(244, 237, 225, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 237, 225, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 70%);
+  z-index: 0;
+}
+
+img, svg { max-width: 100%; }
+img.pixelated, .pixelated img { image-rendering: pixelated; image-rendering: crisp-edges; }
+a { color: inherit; }
+
+::selection { background: var(--color-ember); color: var(--color-ink); }
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 100;
+  background: var(--color-gold);
+  color: var(--color-ink);
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.skip-link:focus { top: 1rem; }
+
+.site-shell {
+  position: relative;
+  width: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin-inline: auto;
+}
+
+/* ---------- 2. Header / nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 4px solid var(--color-brick);
+  background: rgba(15, 17, 19, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 72px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand-mark:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 4px;
+}
+
+.brand-mark img {
+  width: 44px;
+  height: 44px;
+  image-rendering: pixelated;
+}
+
+.brand-text { display: grid; gap: 0.15rem; }
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: clamp(0.78rem, 1.6vw, 1.05rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-cream);
+}
+
+.brand-subtitle {
+  color: var(--color-ember);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-flex;
+  padding: 0.6rem 0.85rem;
+  text-decoration: none;
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--color-cream);
+  background: rgba(242, 104, 34, 0.14);
+  outline: 2px solid var(--color-ember);
+  outline-offset: 2px;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-ember);
+}
+
+/* ---------- 3. Hero (landing pages) ---------- */
+.hero {
+  position: relative;
+  padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, var(--color-ember) 0 32px, transparent 32px 48px);
+  opacity: 0.55;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.1rem;
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.kicker::before {
+  content: '';
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--color-ember);
+  box-shadow: 12px 0 0 var(--color-brick), 24px 0 0 var(--color-gold);
+}
+
+h1, h2, h3 { margin: 0; line-height: 1.12; }
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.4vw, 3.6rem);
+  color: var(--color-cream);
+  text-transform: uppercase;
+  text-wrap: balance;
+  text-shadow: 5px 5px 0 #000;
+}
+
+h1 .accent, h2 .accent { color: var(--color-ember); }
+
+.hero-copy {
+  max-width: 60ch;
+  margin: 1.25rem 0 0;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.7rem 1.1rem;
+  border: 2px solid var(--color-ember);
+  background: var(--color-ember);
+  color: var(--color-ink);
+  text-decoration: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  box-shadow: 5px 5px 0 #000;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #000;
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--color-cream);
+}
+
+.button.disabled,
+.button[aria-disabled="true"] {
+  border-color: var(--color-charcoal);
+  background: transparent;
+  color: var(--color-muted);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  cursor: not-allowed;
+}
+
+.button.disabled:hover,
+.button[aria-disabled="true"]:hover {
+  transform: none;
+  outline: none;
+}
+
+/* ---------- 4. Section header utility ---------- */
+.section { position: relative; padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+
+.section-header {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 720px;
+  margin-bottom: 1.75rem;
+}
+
+.section-label {
+  color: var(--color-ember);
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 #000;
+  text-wrap: balance;
+}
+
+.section-header p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
+/* ---------- 5. Card grid + project tiles ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.4rem;
+  border: var(--border-pixel);
+  background:
+    linear-gradient(145deg, rgba(242, 104, 34, 0.10), transparent 42%),
+    #111216;
+  box-shadow: 6px 6px 0 #000;
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 #000;
+  outline: 2px solid var(--color-ember);
+  outline-offset: 2px;
+}
+
+.project-card.placeholder {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: #15161a;
+}
+
+.project-card.placeholder:hover {
+  transform: none;
+  box-shadow: 6px 6px 0 #000;
+  outline: none;
+}
+
+.project-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.project-card-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-ember);
+  text-transform: uppercase;
+}
+
+.project-card.placeholder .project-card-title { color: var(--color-muted); }
+
+.status-pill {
+  display: inline-flex;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  border: 1px solid var(--color-muted);
+  color: var(--color-muted);
+  font-weight: 900;
+}
+
+.status-pill.live {
+  color: var(--color-ember);
+  border-color: var(--color-ember);
+}
+
+.project-card-blurb {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- 6. CTA box ---------- */
+.cta-box {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  padding: clamp(1.25rem, 3.5vw, 2.25rem);
+  border: var(--border-pixel);
+  background:
+    linear-gradient(90deg, rgba(176, 58, 46, 0.16), transparent),
+    #111216;
+  box-shadow: var(--shadow-hard);
+}
+
+.cta-box h2 { font-size: clamp(1.2rem, 2.4vw, 1.8rem); }
+.cta-box p { margin: 0.5rem 0 0; color: var(--color-muted); max-width: 56ch; }
+
+/* ---------- 7. Footer ---------- */
+.site-footer {
+  padding: 1.75rem 0;
+  border-top: 4px solid var(--color-brick);
+  color: var(--color-muted);
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.footer-brand img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.footer-nav {
+  display: inline-flex;
+  gap: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-nav a {
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible { color: var(--color-ember); }
+
+/* ---------- Breadcrumb (for sub-sites) ---------- */
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding: 0.85rem 0 0;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  letter-spacing: 0.04em;
+}
+
+.breadcrumb a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible { color: var(--color-ember); }
+
+.breadcrumb-sep { margin: 0 0.4rem; color: var(--color-charcoal); }
+
+/* ---------- 8. Responsive ---------- */
+@media (max-width: 760px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .cta-box { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .site-nav ul { gap: 0; }
+  .site-nav a { padding: 0.5rem 0.6rem; font-size: 0.72rem; }
+  .brand-subtitle { letter-spacing: 0.32em; }
+}
+
+/* ---------- 9. Motion + accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

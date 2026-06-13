@@ -5,174 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Third-party Licenses — FlowState Logic</title>
   <meta name="description" content="Third-party licenses, asset attributions, and modification notices for FlowState Logic.">
-  <style>
-    :root {
-      --bg: #0d0800;
-      --surface: #1a1208;
-      --text: #f5e6d3;
-      --muted: #9a8771;
-      --accent: #ff5722;
-      --border: #3a2a18;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-    }
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 24px 96px;
-    }
-    h1 {
-      font-size: 32px;
-      margin: 0 0 8px;
-      color: var(--accent);
-      letter-spacing: 0.5px;
-    }
-    .last-updated {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 32px;
-    }
-    h2 {
-      font-size: 19px;
-      margin-top: 36px;
-      margin-bottom: 12px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-    }
-    h3 {
-      font-size: 16px;
-      margin-top: 24px;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-    p, li {
-      color: var(--text);
-    }
-    p {
-      margin: 0 0 14px;
-    }
-    ul {
-      margin: 0 0 14px;
-      padding-left: 22px;
-    }
-    li {
-      margin-bottom: 6px;
-    }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    code {
-      background: var(--surface);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-    .notice {
-      background: var(--surface);
-      border-left: 3px solid var(--accent);
-      padding: 12px 16px;
-      margin: 14px 0;
-      font-size: 14px;
-    }
-    footer {
-      margin-top: 64px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
-    }
-  </style>
+  <meta name="theme-color" content="#1B1B1E">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../css/legal.css">
 </head>
 <body>
-  <main>
-    <h1>Third-party Licenses</h1>
-    <p class="last-updated">Last updated: June 2026</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <p>FlowState Logic ships with art, fonts, and software developed by third parties. This page records attribution, licenses, and any modifications we made. A complete dependency-level license bundle is maintained in the project repository.</p>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand-mark" href="../" aria-label="Cinderway Interactive home">
+          <img src="../assets/svg/logo-icon.svg" alt="" width="44" height="44">
+          <span class="brand-text">
+            <span class="brand-name">Cinderway</span>
+            <span class="brand-subtitle">Interactive</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="../#projects">Projects</a></li>
+            <li><a href="/flowstate-logic/">FlowState Logic</a></li>
+            <li><a href="../privacy.html">Legal</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    <h2>1. Noto emoji art (icons and accessory glyphs)</h2>
-
-    <p>A portion of the in-app icon and accessory artwork is derived from <a href="https://github.com/googlefonts/noto-emoji" rel="noopener">Google's Noto Emoji project</a>. The original glyphs were authored by Google and contributors; we reuse selected emoji glyphs as starting points for pixel-art conversions used in the app's UI and achievement gallery.</p>
-
-    <h3>Original work</h3>
-    <ul>
-      <li><strong>Project:</strong> Noto Emoji (and Noto Color Emoji)</li>
-      <li><strong>Copyright:</strong> Copyright © Google LLC. Additional contributors per the upstream project's history.</li>
-      <li><strong>Upstream:</strong> <a href="https://github.com/googlefonts/noto-emoji" rel="noopener">https://github.com/googlefonts/noto-emoji</a></li>
-    </ul>
-
-    <h3>License terms</h3>
-    <p>The Noto Emoji upstream has been distributed under more than one license over its history. We acknowledge both because our derivatives may trace back to glyphs originally released under either of these terms:</p>
-    <ul>
-      <li>
-        <strong>SIL Open Font License, Version 1.1</strong> (the current license for the upstream project).
-        Full text: <a href="https://openfontlicense.org/" rel="noopener">https://openfontlicense.org/</a> ·
-        Project copy: <a href="https://github.com/googlefonts/noto-emoji/blob/main/fonts/LICENSE" rel="noopener">noto-emoji/fonts/LICENSE</a>.
-      </li>
-      <li>
-        <strong>Apache License, Version 2.0</strong> (the license used by earlier releases of the upstream PNG emoji assets).
-        Full text: <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">https://www.apache.org/licenses/LICENSE-2.0</a>.
-      </li>
-    </ul>
-
-    <h3>Modifications we made</h3>
-    <p>The Noto-derived assets included in FlowState Logic are <em>not</em> redistributions of the original PNGs. Each glyph used has been transformed substantially before being included in the app:</p>
-    <ul>
-      <li><strong>Downscaled to pixel art.</strong> Original emoji PNGs (authored at high resolution) have been rasterised down to small pixel-art tiles (typically 32×32 or 64×64 pixels) suitable for the retro-arcade visual language of the app.</li>
-      <li><strong>Colour palette flattened and re-quantised</strong> to suit the project's limited pixel-art colour set; smooth gradients have been replaced with discrete pixel steps.</li>
-      <li><strong>Outlines and silhouettes simplified.</strong> Details that would not survive the pixel-art reduction have been trimmed or redrawn by hand.</li>
-      <li><strong>Subset selection.</strong> Only a small set of glyphs has been used; the FlowState Logic app does not redistribute the Noto Emoji font, the complete glyph set, or any source font binary.</li>
-      <li><strong>Renamed.</strong> Files derived from individual glyphs have been renamed from the upstream codepoint format (e.g. <code>emoji_u1f4ab.png</code>) to descriptive names matching their in-app role (e.g. <code>achievement-overcharged.png</code>, <code>bolt-special.png</code>).</li>
-    </ul>
-
-    <h3>"Reserved Font Name" note (OFL)</h3>
-    <p>The SIL Open Font License v1.1 designates a Reserved Font Name (RFN) clause for derivative <em>font</em> works. The pixel-art assets in FlowState Logic are not fonts and are not distributed under the Noto name. None of the assets bundled in the app are named &ldquo;Noto&rdquo; in their filenames, in-app names, or display labels.</p>
-
-    <h2>2. Press Start 2P and other display fonts</h2>
-
-    <p>The retro display font is <strong>Press Start 2P</strong>, licensed under the <a href="https://openfontlicense.org/" rel="noopener">SIL Open Font License, Version 1.1</a>. The font is loaded via the <code>@expo-google-fonts/press-start-2p</code> package; the upstream copyright and license text are bundled in the package's <code>LICENSE</code> file. We use the font as-is, without modification to the font file itself.</p>
-
-    <p>Additional bitmap-style fonts (<code>ArcadepixPlus</code>, <code>ModerDOS437</code>) are loaded from the app's <code>assets/fonts/</code> directory. Their licenses are tracked in the project's internal asset ledger; please contact us via the address below for the upstream attribution that applies to a specific font file.</p>
-
-    <h2>3. Sound effects</h2>
-
-    <p>Sound effects bundled with the app draw from licensed audio packs that permit commercial use with attribution. Provenance per-file is maintained in the project's internal asset ledger.</p>
-
-    <h2>4. Open-source software libraries</h2>
-
-    <p>FlowState Logic is built on a large stack of open-source software libraries — React Native, Expo, Supabase client, Sentry SDK, Reanimated, and many others. The majority of dependencies are licensed under permissive terms (MIT, BSD-3-Clause, Apache 2.0, ISC). A complete inventory is maintained in the project repository as machine-readable ledgers:</p>
-    <ul>
-      <li><code>docs/legal/DEPENDENCY_LICENSE_LEDGER.csv</code> — every transitive dependency, its version, license, and notice status.</li>
-      <li><code>docs/legal/OPEN_SOURCE_NOTICES.md</code> — direct and dev dependencies that require notice carry-forward.</li>
-    </ul>
-    <p>Where a dependency's license requires a copy of the license text to accompany binary distributions (e.g. Apache 2.0, OFL), the license file shipped inside <code>node_modules/&lt;package&gt;/LICENSE</code> is preserved alongside the bundled build artefact.</p>
-
-    <h2>5. Changes log</h2>
-
-    <p>If a third-party asset or library is added, removed, or substantially modified between releases, the change is recorded in the project's <a href="patch-notes/">patch notes</a> and in the asset ledger linked above. This page itself is versioned in Git.</p>
-
-    <h2>6. Contact</h2>
-
-    <p>Questions about a specific asset or license? Email <a href="mailto:support@flowstatelogic.app">support@flowstatelogic.app</a> and we will share the upstream attribution that applies. We will also make any correction needed if we have inadvertently misattributed a third-party work.</p>
-
-    <div class="notice">
-      Nothing on this page constitutes legal advice. The licenses referenced above are the authoritative statements of what is permitted and required; if you are evaluating reuse of FlowState Logic's assets or code, please consult the actual license texts and, where appropriate, qualified legal counsel.
+    <div class="container breadcrumb">
+      <a href="../">Cinderway Interactive</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/flowstate-logic/">FlowState Logic</a>
+      <span class="breadcrumb-sep">/</span>
+      <span aria-current="page">Third-party licenses</span>
     </div>
 
-    <footer>
-      © FlowState Logic. This page is hosted via GitHub Pages from the project repository. The same attribution is referenced in-app at <em>Settings → About</em>.
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <p class="doc-eyebrow">FlowState Logic · Attributions</p>
+        <h1>Third-party Licenses</h1>
+        <p class="doc-meta">Last updated: June 2026</p>
+
+        <p>FlowState Logic ships with art, fonts, and software developed by third parties. This page records attribution, licenses, and any modifications we made. A complete dependency-level license bundle is maintained in the project repository.</p>
+
+        <h2>1. Noto emoji art (icons and accessory glyphs)</h2>
+
+        <p>A portion of the in-app icon and accessory artwork is derived from <a href="https://github.com/googlefonts/noto-emoji" rel="noopener">Google's Noto Emoji project</a>. The original glyphs were authored by Google and contributors; we reuse selected emoji glyphs as starting points for pixel-art conversions used in the app's UI and achievement gallery.</p>
+
+        <h3>Original work</h3>
+        <ul>
+          <li><strong>Project:</strong> Noto Emoji (and Noto Color Emoji)</li>
+          <li><strong>Copyright:</strong> Copyright © Google LLC. Additional contributors per the upstream project's history.</li>
+          <li><strong>Upstream:</strong> <a href="https://github.com/googlefonts/noto-emoji" rel="noopener">https://github.com/googlefonts/noto-emoji</a></li>
+        </ul>
+
+        <h3>License terms</h3>
+        <p>The Noto Emoji upstream has been distributed under more than one license over its history. We acknowledge both because our derivatives may trace back to glyphs originally released under either of these terms:</p>
+        <ul>
+          <li>
+            <strong>SIL Open Font License, Version 1.1</strong> (the current license for the upstream project).
+            Full text: <a href="https://openfontlicense.org/" rel="noopener">https://openfontlicense.org/</a> ·
+            Project copy: <a href="https://github.com/googlefonts/noto-emoji/blob/main/fonts/LICENSE" rel="noopener">noto-emoji/fonts/LICENSE</a>.
+          </li>
+          <li>
+            <strong>Apache License, Version 2.0</strong> (the license used by earlier releases of the upstream PNG emoji assets).
+            Full text: <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">https://www.apache.org/licenses/LICENSE-2.0</a>.
+          </li>
+        </ul>
+
+        <h3>Modifications we made</h3>
+        <p>The Noto-derived assets included in FlowState Logic are <em>not</em> redistributions of the original PNGs. Each glyph used has been transformed substantially before being included in the app:</p>
+        <ul>
+          <li><strong>Downscaled to pixel art.</strong> Original emoji PNGs (authored at high resolution) have been rasterised down to small pixel-art tiles (typically 32×32 or 64×64 pixels) suitable for the retro-arcade visual language of the app.</li>
+          <li><strong>Colour palette flattened and re-quantised</strong> to suit the project's limited pixel-art colour set; smooth gradients have been replaced with discrete pixel steps.</li>
+          <li><strong>Outlines and silhouettes simplified.</strong> Details that would not survive the pixel-art reduction have been trimmed or redrawn by hand.</li>
+          <li><strong>Subset selection.</strong> Only a small set of glyphs has been used; the FlowState Logic app does not redistribute the Noto Emoji font, the complete glyph set, or any source font binary.</li>
+          <li><strong>Renamed.</strong> Files derived from individual glyphs have been renamed from the upstream codepoint format (e.g. <code>emoji_u1f4ab.png</code>) to descriptive names matching their in-app role (e.g. <code>achievement-overcharged.png</code>, <code>bolt-special.png</code>).</li>
+        </ul>
+
+        <h3>"Reserved Font Name" note (OFL)</h3>
+        <p>The SIL Open Font License v1.1 designates a Reserved Font Name (RFN) clause for derivative <em>font</em> works. The pixel-art assets in FlowState Logic are not fonts and are not distributed under the Noto name. None of the assets bundled in the app are named &ldquo;Noto&rdquo; in their filenames, in-app names, or display labels.</p>
+
+        <h2>2. Press Start 2P and other display fonts</h2>
+
+        <p>The retro display font is <strong>Press Start 2P</strong>, licensed under the <a href="https://openfontlicense.org/" rel="noopener">SIL Open Font License, Version 1.1</a>. The font is loaded via the <code>@expo-google-fonts/press-start-2p</code> package; the upstream copyright and license text are bundled in the package's <code>LICENSE</code> file. We use the font as-is, without modification to the font file itself.</p>
+
+        <p>Additional bitmap-style fonts (<code>ArcadepixPlus</code>, <code>ModerDOS437</code>) are loaded from the app's <code>assets/fonts/</code> directory. Their licenses are tracked in the project's internal asset ledger; please contact us via the address below for the upstream attribution that applies to a specific font file.</p>
+
+        <h2>3. Sound effects</h2>
+
+        <p>Sound effects bundled with the app draw from licensed audio packs that permit commercial use with attribution. Provenance per-file is maintained in the project's internal asset ledger.</p>
+
+        <h2>4. Open-source software libraries</h2>
+
+        <p>FlowState Logic is built on a large stack of open-source software libraries — React Native, Expo, Supabase client, Sentry SDK, Reanimated, and many others. The majority of dependencies are licensed under permissive terms (MIT, BSD-3-Clause, Apache 2.0, ISC). A complete inventory is maintained in the project repository as machine-readable ledgers:</p>
+        <ul>
+          <li><code>docs/legal/DEPENDENCY_LICENSE_LEDGER.csv</code> — every transitive dependency, its version, license, and notice status.</li>
+          <li><code>docs/legal/OPEN_SOURCE_NOTICES.md</code> — direct and dev dependencies that require notice carry-forward.</li>
+        </ul>
+        <p>Where a dependency's license requires a copy of the license text to accompany binary distributions (e.g. Apache 2.0, OFL), the license file shipped inside <code>node_modules/&lt;package&gt;/LICENSE</code> is preserved alongside the bundled build artefact.</p>
+
+        <h2>5. Changes log</h2>
+
+        <p>If a third-party asset or library is added, removed, or substantially modified between releases, the change is recorded in the project's <a href="patch-notes/">patch notes</a> and in the asset ledger linked above. This page itself is versioned in Git.</p>
+
+        <h2>6. Contact</h2>
+
+        <p>Questions about a specific asset or license? Email <a href="mailto:support@flowstatelogic.app">support@flowstatelogic.app</a> and we will share the upstream attribution that applies. We will also make any correction needed if we have inadvertently misattributed a third-party work.</p>
+
+        <div class="notice">
+          <p>Nothing on this page constitutes legal advice. The licenses referenced above are the authoritative statements of what is permitted and required; if you are evaluating reuse of FlowState Logic's assets or code, please consult the actual license texts and, where appropriate, qualified legal counsel.</p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span class="footer-brand">
+          <img src="../assets/svg/logo-icon.svg" alt="" width="32" height="32">
+          FlowState Logic · a Cinderway Interactive project
+        </span>
+        <nav class="footer-nav" aria-label="Legal">
+          <a href="../privacy.html">Privacy</a>
+          <a href="../terms.html">Terms</a>
+          <a href="../delete-account.html">Delete account</a>
+        </nav>
+      </div>
     </footer>
-  </main>
+  </div>
 </body>
 </html>

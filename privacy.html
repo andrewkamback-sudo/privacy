@@ -5,113 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — FlowState Logic</title>
   <meta name="description" content="Privacy policy for FlowState Logic.">
-  <style>
-    :root {
-      --bg: #0d0800;
-      --surface: #1a1208;
-      --text: #f5e6d3;
-      --muted: #9a8771;
-      --accent: #ff5722;
-      --border: #3a2a18;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
-    }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 96px;
-    }
-    h1 {
-      font-size: 32px;
-      margin: 0 0 8px;
-      color: var(--accent);
-      letter-spacing: 0.5px;
-    }
-    .last-updated {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 32px;
-    }
-    h2 {
-      font-size: 19px;
-      margin-top: 36px;
-      margin-bottom: 12px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
-    }
-    p {
-      margin: 0 0 14px;
-      color: var(--text);
-    }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    code {
-      background: var(--surface);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-    footer {
-      margin-top: 64px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
-    }
-  </style>
+  <meta name="theme-color" content="#1B1B1E">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/legal.css">
 </head>
 <body>
-  <main>
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: May 2026</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <h2>1. What We Collect</h2>
-    <p>When you sign up, we store the email address and display name you provide.</p>
-    <p>As you play, we store your in-app progress — completed lessons, embers, crystals, achievements, and the settings you've chosen. None of this leaves your device unless you've signed in.</p>
-    <p>We don't collect your real name, location, contacts, photos, or device identifiers.</p>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand-mark" href="/" aria-label="Cinderway Interactive home">
+          <img src="assets/svg/logo-icon.svg" alt="" width="44" height="44">
+          <span class="brand-text">
+            <span class="brand-name">Cinderway</span>
+            <span class="brand-subtitle">Interactive</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="flowstate-logic/">FlowState Logic</a></li>
+            <li><a href="privacy.html" aria-current="page">Legal</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    <h2>2. How We Store It</h2>
-    <p>Local-only play: your data lives on your device in the app's standard private storage, isolated from other apps by the operating system. It is not separately encrypted by us, so if your device itself is unencrypted and someone has physical access, the data could be read.</p>
-    <p>Signed-in play: your data syncs to a row tied to your account on Supabase, a managed Postgres backend. Communication is encrypted in transit; data at rest is protected by Supabase's standard storage encryption.</p>
+    <div class="container breadcrumb">
+      <a href="/">Cinderway Interactive</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="flowstate-logic/">FlowState Logic</a>
+      <span class="breadcrumb-sep">/</span>
+      <span aria-current="page">Privacy Policy</span>
+    </div>
 
-    <h2>3. Why We Collect It</h2>
-    <p>To run the Service: authenticate you, sync your progress across devices, and personalise lesson recommendations.</p>
-    <p>We do not sell your data, share it with advertisers, or build advertising profiles.</p>
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <p class="doc-eyebrow">Legal · FlowState Logic</p>
+        <h1>Privacy Policy</h1>
+        <p class="doc-meta">Last updated: May 2026</p>
 
-    <h2>4. Service Providers</h2>
-    <p>We use Supabase (hosting + auth), Sentry (crash reporting), and Expo / Apple Push / Google Push (notification delivery). These providers process data only on our behalf and are bound by their own privacy commitments.</p>
+        <h2>1. What We Collect</h2>
+        <p>When you sign up, we store the email address and display name you provide.</p>
+        <p>As you play, we store your in-app progress — completed lessons, embers, crystals, achievements, and the settings you've chosen. None of this leaves your device unless you've signed in.</p>
+        <p>We don't collect your real name, location, contacts, photos, or device identifiers.</p>
 
-    <h2>5. Children</h2>
-    <p>The Service is intended for users 13 and older. If you believe a child under 13 has created an account, contact us and we'll remove it.</p>
+        <h2>2. How We Store It</h2>
+        <p>Local-only play: your data lives on your device in the app's standard private storage, isolated from other apps by the operating system. It is not separately encrypted by us, so if your device itself is unencrypted and someone has physical access, the data could be read.</p>
+        <p>Signed-in play: your data syncs to a row tied to your account on Supabase, a managed Postgres backend. Communication is encrypted in transit; data at rest is protected by Supabase's standard storage encryption.</p>
 
-    <h2>6. Your Rights</h2>
-    <p>Access: see your account email and display name in Settings → Account at any time.</p>
-    <p>Deletion: erase your account and cloud-synced progress via Settings → Account → Delete account. This is permanent.</p>
-    <p>Where required by law (e.g. GDPR, CCPA), you have additional rights to access, port, or correct your data — contact us to exercise them.</p>
+        <h2>3. Why We Collect It</h2>
+        <p>To run the Service: authenticate you, sync your progress across devices, and personalise lesson recommendations.</p>
+        <p>We do not sell your data, share it with advertisers, or build advertising profiles.</p>
 
-    <h2>7. Changes</h2>
-    <p>We may update this policy. Material changes will be surfaced in-app before they take effect.</p>
+        <h2>4. Service Providers</h2>
+        <p>We use Supabase (hosting + auth), Sentry (crash reporting), and Expo / Apple Push / Google Push (notification delivery). These providers process data only on our behalf and are bound by their own privacy commitments.</p>
 
-    <h2>8. Contact</h2>
-    <p>Privacy questions? Email <a href="mailto:support@flowstatelogic.app">support@flowstatelogic.app</a>.</p>
+        <h2>5. Children</h2>
+        <p>The Service is intended for users 13 and older. If you believe a child under 13 has created an account, contact us and we'll remove it.</p>
 
-    <footer>
-      © FlowState Logic. This page is hosted via GitHub Pages from
-      the project repository. The same copy is shown in-app at
-      Settings → About → Privacy Policy.
+        <h2>6. Your Rights</h2>
+        <p>Access: see your account email and display name in Settings → Account at any time.</p>
+        <p>Deletion: erase your account and cloud-synced progress via Settings → Account → Delete account. This is permanent.</p>
+        <p>Where required by law (e.g. GDPR, CCPA), you have additional rights to access, port, or correct your data — contact us to exercise them.</p>
+
+        <h2>7. Changes</h2>
+        <p>We may update this policy. Material changes will be surfaced in-app before they take effect.</p>
+
+        <h2>8. Contact</h2>
+        <p>Privacy questions? Email <a href="mailto:support@flowstatelogic.app">support@flowstatelogic.app</a>.</p>
+
+        <div class="notice">
+          <p>This page is hosted by Cinderway Interactive as the canonical privacy policy for FlowState Logic. The same copy is shown in-app at Settings → About → Privacy Policy.</p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span class="footer-brand">
+          <img src="assets/svg/logo-icon.svg" alt="" width="32" height="32">
+          Cinderway Interactive
+        </span>
+        <nav class="footer-nav" aria-label="Legal">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="delete-account.html">Delete account</a>
+        </nav>
+      </div>
     </footer>
-  </main>
+  </div>
 </body>
 </html>
