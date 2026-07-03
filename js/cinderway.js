@@ -81,6 +81,7 @@
     var status = form.querySelector('[data-signup-status]');
     var input = form.querySelector('input[type="email"]');
     var button = form.querySelector('button[type="submit"]');
+    var cta = document.querySelector('[data-signup-cta]');
 
     function setStatus(msg, state) {
       if (!status) return;
@@ -102,6 +103,7 @@
       }
 
       if (button) button.disabled = true;
+      if (cta) cta.hidden = true;
       setStatus('Signing you up…', null);
 
       // no-cors: Buttondown's embed endpoint doesn't return CORS headers, so
@@ -114,6 +116,7 @@
       }).then(function () {
         form.reset();
         setStatus("You're on the list — check your inbox to confirm.", 'is-success');
+        if (cta) cta.hidden = false;
       }).catch(function () {
         setStatus('Something went wrong. Please try again in a moment.', 'is-error');
       }).finally(function () {
