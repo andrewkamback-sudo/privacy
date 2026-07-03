@@ -85,14 +85,14 @@
         <p>Your account and progress are removed immediately. You'll be signed out and returned to the Welcome screen, where you can either create a fresh account or continue without one.</p>
 
         <h2>If you can't access the app</h2>
-        <p>If your device is lost or broken and you can't open FlowState Logic to delete your account from inside the app, email <a href="mailto:support@flowstatelogic.app">support@flowstatelogic.app</a> from the email address you used to sign up. We'll verify ownership and complete the deletion on your behalf within 30 days, usually within 24-48 hours.</p>
+        <p>If your device is lost or broken and you can't open FlowState Logic to delete your account from inside the app, email <a href="mailto:support@cinderwayinteractive.com">support@cinderwayinteractive.com</a> from the email address you used to sign up. We'll verify ownership and complete the deletion on your behalf within 30 days, usually within 24-48 hours.</p>
 
         <h2>What "deletion" technically means here</h2>
         <p>Your record is removed from our Supabase Auth users table and the corresponding row in our <code>game_states</code> table is deleted via a foreign-key cascade. Both happen atomically in a single transaction — there's no halfway state where one is gone and the other lingers.</p>
         <p>Backups taken before the deletion may retain your row for the duration of the backup retention window (Supabase's default: 7 days). Backups are encrypted and inaccessible to humans except in a disaster-recovery scenario, and the deleted row never re-enters the live database.</p>
 
         <h2>Contact</h2>
-        <p>Questions about deletion or your data more generally? Email <a href="mailto:support@flowstatelogic.app">support@flowstatelogic.app</a>.</p>
+        <p>Questions about deletion or your data more generally? Email <a href="mailto:support@cinderwayinteractive.com">support@cinderwayinteractive.com</a>.</p>
 
         <div class="notice">
           <p>This page is hosted by Cinderway Interactive as the canonical reference for the FlowState Logic account-deletion process, required by app store policies.</p>
