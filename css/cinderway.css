@@ -517,6 +517,76 @@ h2 {
 .cta-box h2 { font-size: clamp(1.2rem, 2.4vw, 1.8rem); }
 .cta-box p { margin: 0.5rem 0 0; color: var(--color-muted); max-width: 56ch; }
 
+/* ---------- 6b. Waitlist / signup ---------- */
+.signup-box {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: var(--border-pixel);
+  background:
+    linear-gradient(120deg, rgba(242, 104, 34, 0.14), transparent 55%),
+    #111216;
+  box-shadow: var(--shadow-hard);
+}
+
+.signup-copy .section-label { display: block; margin-bottom: 0.75rem; }
+.signup-copy h2 { font-size: clamp(1.3rem, 2.6vw, 2rem); }
+.signup-copy p { margin: 0.75rem 0 0; color: var(--color-muted); max-width: 60ch; }
+
+.signup-form { margin: 0; }
+
+.signup-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.signup-input {
+  flex: 1 1 16rem;
+  min-width: 0;
+  min-height: 46px;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid var(--color-charcoal);
+  background: #0d0e11;
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.signup-input::placeholder { color: var(--color-charcoal); }
+
+.signup-input:focus-visible {
+  outline: none;
+  border-color: var(--color-ember);
+  box-shadow: 0 0 0 3px rgba(242, 104, 34, 0.28);
+}
+
+.signup-form .button { flex: 0 0 auto; }
+
+.signup-status {
+  margin: 0.9rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+.signup-status.is-success { color: var(--color-gold); }
+.signup-status.is-error { color: var(--color-brick); }
+
+/* Visually-hidden label, still read by screen readers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ---------- 7. Footer ----------
    Mirror the header inversion: warm cream bar with dark ink text +
    brick accents. Keeps the brick stripe along the top edge to echo
@@ -605,6 +675,8 @@ h2 {
 @media (max-width: 760px) {
   .card-grid { grid-template-columns: 1fr; }
   .cta-box { grid-template-columns: 1fr; }
+  .signup-row { flex-direction: column; }
+  .signup-row .button { width: 100%; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
 
   .header-inner { min-height: 76px; padding-block: 0.5rem; }

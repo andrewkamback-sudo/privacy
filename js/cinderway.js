@@ -69,6 +69,60 @@
     update();
   }
 
+  // ---------- Waitlist signup (Buttondown embed) ----------
+  // Progressive enhancement: the <form data-signup-form> already works with
+  // JS off (native POST opens Buttondown's confirmation page in a new tab).
+  // With JS we intercept, POST in the background, and show an inline message
+  // so the visitor never leaves the landing page.
+  function initSignup() {
+    var form = document.querySelector('[data-signup-form]');
+    if (!form || !window.fetch) return;
+
+    var status = form.querySelector('[data-signup-status]');
+    var input = form.querySelector('input[type="email"]');
+    var button = form.querySelector('button[type="submit"]');
+
+    function setStatus(msg, state) {
+      if (!status) return;
+      status.textContent = msg;
+      status.hidden = !msg;
+      status.classList.remove('is-success', 'is-error');
+      if (state) status.classList.add(state);
+    }
+
+    form.addEventListener('submit', function (event) {
+      // If the placeholder username was never swapped in, fall back to the
+      // native submit rather than silently POSTing to a dead endpoint.
+      if (form.action.indexOf('YOUR_BUTTONDOWN_USERNAME') !== -1) return;
+      event.preventDefault();
+
+      if (input && !input.checkValidity()) {
+        input.reportValidity();
+        return;
+      }
+
+      if (button) button.disabled = true;
+      setStatus('Signing you up…', null);
+
+      // no-cors: Buttondown's embed endpoint doesn't return CORS headers, so
+      // the response is opaque. The subscribe still lands; we optimistically
+      // confirm and only surface an error on an outright network failure.
+      fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams({ email: input ? input.value : '', embed: '1' })
+      }).then(function () {
+        form.reset();
+        setStatus("You're on the list — check your inbox to confirm.", 'is-success');
+      }).catch(function () {
+        setStatus('Something went wrong. Please try again in a moment.', 'is-error');
+      }).finally(function () {
+        if (button) button.disabled = false;
+      });
+    });
+  }
+
   initNav();
   initParallax();
+  initSignup();
 })();

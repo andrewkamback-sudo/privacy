@@ -15,6 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../css/cinderway.css">
+
+  <!-- Analytics — cookieless, no consent banner needed. Register
+       cinderwayinteractive.com at https://plausible.io and this goes live;
+       until then it's inert. Prefer a free tool? Swap just this one <script>
+       line for your Cloudflare Web Analytics / Umami snippet — nothing else
+       on the page changes. -->
+  <script defer data-domain="cinderwayinteractive.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,8 +63,52 @@
             mascot, and a streak system built to be forgiving instead of punishing.
           </p>
           <div class="hero-actions">
-            <a class="button" href="patch-notes/">Latest patch notes</a>
-            <a class="button secondary" href="license.html">Third-party licenses</a>
+            <a class="button" href="#waitlist">Join the beta</a>
+            <a class="button secondary" href="patch-notes/">Latest patch notes</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="waitlist" aria-labelledby="waitlist-title">
+        <div class="container">
+          <div class="signup-box">
+            <div class="signup-copy">
+              <span class="section-label">Join the beta</span>
+              <h2 id="waitlist-title">Be first through <span class="accent">the gate.</span></h2>
+              <p>
+                FlowState Logic is in private beta. Drop your email and we'll send one
+                message the day it lands on the App Store — plus early TestFlight invites
+                as spots open up. No spam, we never sell your data, and it's one tap to leave.
+              </p>
+            </div>
+
+            <!-- Buttondown embed. Replace YOUR_BUTTONDOWN_USERNAME below with your
+                 handle from Settings → your account URL (the form action). The plain
+                 form already works with JS disabled; js/cinderway.js enhances it to
+                 submit inline without leaving the page. -->
+            <form
+              class="signup-form"
+              action="https://buttondown.com/api/emails/embed-subscribe/YOUR_BUTTONDOWN_USERNAME"
+              method="post"
+              target="_blank"
+              data-signup-form
+            >
+              <label class="sr-only" for="signup-email">Email address</label>
+              <div class="signup-row">
+                <input
+                  class="signup-input"
+                  id="signup-email"
+                  type="email"
+                  name="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+                >
+                <button class="button" type="submit">Notify me</button>
+              </div>
+              <p class="signup-status" role="status" aria-live="polite" data-signup-status hidden></p>
+            </form>
           </div>
         </div>
       </section>
