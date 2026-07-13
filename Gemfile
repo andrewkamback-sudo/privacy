@@ -4,3 +4,6 @@ source "https://rubygems.org"
 # jekyll install, while still letting local builds run with Bundler.
 gem "github-pages", group: :jekyll_plugins
 
+# Ruby 3.4 no longer makes this available implicitly, while Jekyll 3 still
+# requires it through its command loader.
+gem "erb"

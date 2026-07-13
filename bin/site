@@ -7,6 +7,16 @@ shift || true
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repo_root"
 
+export BUNDLE_PATH="${BUNDLE_PATH:-.bundle}"
+export GEM_HOME="${GEM_HOME:-$repo_root/.bundle}"
+
+if ! command -v bundle >/dev/null 2>&1 && command -v ruby >/dev/null 2>&1; then
+  ruby_user_bin="$(ruby -e 'print File.join(Gem.user_dir, "bin")' 2>/dev/null || true)"
+  if [[ -n "${ruby_user_bin:-}" && -x "$ruby_user_bin/bundle" ]]; then
+    export PATH="$ruby_user_bin:$PATH"
+  fi
+fi
+
 run_with_bundle() {
   bundle exec jekyll "$cmd" "$@"
 }
@@ -70,6 +80,7 @@ Install one of these:
   Arch/CachyOS:
     sudo pacman -S --needed ruby base-devel
     gem install bundler
+    export PATH="$(ruby -e 'print File.join(Gem.user_dir, "bin")'):$PATH"
     bin/site install
 
   Docker:
