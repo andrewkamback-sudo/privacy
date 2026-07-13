@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "site:install": "bin/site install",
+    "site:build": "bin/site build",
+    "site:serve": "bin/site serve --host 0.0.0.0 --livereload",
+    "site:doctor": "bin/site doctor"
+  }
+}

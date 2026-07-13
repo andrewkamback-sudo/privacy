@@ -6,3 +6,10 @@ theme: null
 exclude:
   - README.md
   - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - bin
+  - vendor
+  - .bundle
+  - .jekyll-cache

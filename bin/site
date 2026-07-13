@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cmd="${1:-build}"
+shift || true
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$repo_root"
+
+run_with_bundle() {
+  bundle exec jekyll "$cmd" "$@"
+}
+
+run_bundle_install() {
+  bundle install "$@"
+}
+
+run_with_docker() {
+  local tty_args=()
+  if [[ -t 0 && -t 1 ]]; then
+    tty_args=(-it)
+  fi
+
+  docker run --rm "${tty_args[@]}" \
+    --user "$(id -u):$(id -g)" \
+    -v "$repo_root:/srv/jekyll" \
+    -w /srv/jekyll \
+    -p 4000:4000 \
+    -e BUNDLE_PATH=.bundle \
+    -e GEM_HOME=/srv/jekyll/.bundle \
+    -e JEKYLL_ENV=development \
+    ruby:3.3 \
+    bash -lc '
+      if [[ "$1" == "install" ]]; then
+        shift
+        exec bundle install "$@"
+      fi
+
+      bundle install
+      exec bundle exec jekyll "$@"
+    ' ruby-jekyll "$cmd" "$@"
+}
+
+if command -v bundle >/dev/null 2>&1 && [[ -f Gemfile.lock || "$cmd" == "install" ]]; then
+  if [[ "$cmd" == "install" ]]; then
+    run_bundle_install "$@"
+  else
+    run_with_bundle "$@"
+  fi
+  exit 0
+fi
+
+if command -v bundle >/dev/null 2>&1; then
+  echo "Bundler is available, but dependencies are not installed yet." >&2
+  echo "Run: bin/site install" >&2
+  echo "Then: bin/site ${cmd} $*" >&2
+  exit 1
+fi
+
+if command -v docker >/dev/null 2>&1 && docker info >/dev/null 2>&1; then
+  run_with_docker "$@"
+  exit 0
+fi
+
+cat >&2 <<'EOF'
+No local Jekyll runtime is available.
+
+Install one of these:
+
+  Arch/CachyOS:
+    sudo pacman -S --needed ruby base-devel
+    gem install bundler
+    bin/site install
+
+  Docker:
+    start the Docker daemon, then run this script again
+
+Commands after setup:
+
+  bin/site install
+  bin/site build
+  bin/site serve --host 0.0.0.0 --livereload
+EOF
+exit 1
