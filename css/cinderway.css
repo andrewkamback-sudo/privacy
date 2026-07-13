@@ -342,6 +342,43 @@ h1 .accent, h2 .accent { color: var(--color-ember); }
   margin-top: 1.75rem;
 }
 
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  max-width: 12.5rem;
+  text-decoration: none;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.store-badge:hover,
+.store-badge:focus-visible {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 0.45rem rgba(242, 104, 34, 0.45));
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.store-badge img {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+}
+
+.store-badge.google-play {
+  margin: -0.55rem 0;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
