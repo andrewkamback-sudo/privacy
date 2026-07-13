@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Delete your account — FlowState Logic</title>
+  <title>Delete your account - FlowState Logic</title>
   <meta name="description" content="How to permanently delete your FlowState Logic account and all associated data.">
   <meta name="theme-color" content="#1B1B1E">
 
@@ -54,8 +54,8 @@
 
         <h2>What gets deleted</h2>
         <ul>
-          <li>Your account credentials — email and display name</li>
-          <li>Your cloud-synced game progress — completed lessons, XP, embers, crystals, cores, streak history, equipped cosmetics, settings</li>
+          <li>Your account credentials - email and display name</li>
+          <li>Your cloud-synced game progress - completed lessons, XP, embers, crystals, cores, streak history, equipped cosmetics, settings</li>
           <li>Any achievements or unlocks tied to your account</li>
         </ul>
 
@@ -70,7 +70,7 @@
         </ul>
 
         <div class="notice">
-          <p><strong>This is permanent.</strong> Once you confirm deletion, your account and progress are gone. We can't restore them from a backup. If you want to take a break instead, just sign out (Settings → Account → Sign out) — your data stays put until you return.</p>
+          <p><strong>This is permanent.</strong> Once you confirm deletion, your account and progress are gone. We can't restore them from a backup. If you want to take a break instead, just sign out (Settings → Account → Sign out) - your data stays put until you return.</p>
         </div>
 
         <h2>How to delete your account (from inside the app)</h2>
@@ -80,7 +80,7 @@
           <li>Tap <strong>Settings</strong></li>
           <li>Scroll to the <strong>Account</strong> section</li>
           <li>Tap <strong>Delete account</strong></li>
-          <li>You'll see two confirmation prompts in a row — this is intentional so you don't tap through by accident. Tap <strong>Delete</strong>, then <strong>Delete forever</strong>.</li>
+          <li>You'll see two confirmation prompts in a row - this is intentional so you don't tap through by accident. Tap <strong>Delete</strong>, then <strong>Delete forever</strong>.</li>
         </ol>
         <p>Your account and progress are removed immediately. You'll be signed out and returned to the Welcome screen, where you can either create a fresh account or continue without one.</p>
 
@@ -88,7 +88,7 @@
         <p>If your device is lost or broken and you can't open FlowState Logic to delete your account from inside the app, email <a href="mailto:support@cinderwayinteractive.com">support@cinderwayinteractive.com</a> from the email address you used to sign up. We'll verify ownership and complete the deletion on your behalf within 30 days, usually within 24-48 hours.</p>
 
         <h2>What "deletion" technically means here</h2>
-        <p>Your record is removed from our Supabase Auth users table and the corresponding row in our <code>game_states</code> table is deleted via a foreign-key cascade. Both happen atomically in a single transaction — there's no halfway state where one is gone and the other lingers.</p>
+        <p>Your record is removed from our Supabase Auth users table and the corresponding row in our <code>game_states</code> table is deleted via a foreign-key cascade. Both happen atomically in a single transaction - there's no halfway state where one is gone and the other lingers.</p>
         <p>Backups taken before the deletion may retain your row for the duration of the backup retention window (Supabase's default: 7 days). Backups are encrypted and inaccessible to humans except in a disaster-recovery scenario, and the deleted row never re-enters the live database.</p>
 
         <h2>Contact</h2>

@@ -3,7 +3,7 @@ layout: default
 title: Alpha 12 patch notes
 ---
 
-# Alpha 12 — June 2026
+# Alpha 12 - June 2026
 
 Big drop this round. Overhauled mascot art, a brand-new fitting tool, the
 Pro upgrade screen, and the new Reserve Ember system. Notes below.
@@ -14,12 +14,12 @@ Pro upgrade screen, and the new Reserve Ember system. Notes below.
   ground up. Royalty-free, fully ours.
 - **Fit Editor in the Fitting Room.** You can now drag accessories to
   the perfect spot on O.B., resize them (within reason!), rotate them,
-  and pick the layer they render on — in front, behind the body,
+  and pick the layer they render on - in front, behind the body,
   behind auras, etc.
 - **Editing toggle for the Fit Editor.** Lock the preview so scrolling
   through the accessory tiles doesn't accidentally yank things around.
   Defaults to locked on entry so a quick browse stays a quick browse.
-- **Reserve Embers** — a new resource that softens long missed-question
+- **Reserve Embers** - a new resource that softens long missed-question
   runs. Capped at 10 (free) / 20 (Pro). Only spent after normal embers
   hit zero. Recharges when normal embers stay at max for 24 hours, then
   once every 24 hours after that (every 12 hours on Pro). Both timings
@@ -40,11 +40,11 @@ Pro upgrade screen, and the new Reserve Ember system. Notes below.
   Profile screen. Monthly subscription, yearly (discounted), or
   lifetime founder purchase. Perks include:
   - Faster Ember refill
-  - Flow protection — a free streak freeze every week
+  - Flow protection - a free streak freeze every week
   - Advanced Insights tab (unlocks as a main tab when active)
   - Weekly cosmetic-currency credit
   - 15% global shop discount (in-game currency AND real money)
-  - Priority beta access — including a badge on your profile
+  - Priority launch access - including a badge on your profile
 - **New achievements** for the new systems:
     - *Skill streaks:* Hot Streak (3 in a row), Flow State (7 in a row),
       Flawless (perfect lesson), Still Burning, Overcharged
@@ -55,15 +55,15 @@ Pro upgrade screen, and the new Reserve Ember system. Notes below.
       gallery before subscribing: First Subscription, Stockpile (reserves
       to cap), Bottomless (reserves above 30)
   - Locked tiles now show the actual badge art (dimmed) with a small
-    "LOCKED" pill in the corner — instead of swapping to a padlock
-    icon — so you can recognize the badges you're working toward.
+    "LOCKED" pill in the corner - instead of swapping to a padlock
+    icon - so you can recognize the badges you're working toward.
 - **Dedicated art** for the new Hot Streak, Flow State, Crystal
   Collector, Overcharged, and Stockpile badges so the gallery doesn't
   reuse generic icons.
 
 ## 🔧 Tuning
 
-- **Curriculum** — targeted question + answer improvements across
+- **Curriculum** - targeted question + answer improvements across
   multiple modules.
 - **Font size selector** in Settings → Display. Affects subtext sites
   throughout the app where the default sizes were hard to read:
@@ -71,7 +71,7 @@ Pro upgrade screen, and the new Reserve Ember system. Notes below.
     - Larger (+20%)
     - Largest (+35%)
     - X-Large (+50%)
-  Headers and large display text stay at designed size — the
+  Headers and large display text stay at designed size - the
   pixel-arcade typeface was authored for specific sizes and scaling
   the chunky glyphs just makes them look soft.
 
@@ -98,5 +98,5 @@ Pro upgrade screen, and the new Reserve Ember system. Notes below.
 - Reserve ember recharge timings are tuned based on best guess. If
   they feel too generous (Pro perks vanish quickly) or too tight (free
   tier grinds), drop a note via Settings → Send feedback.
-- Headers and large display text don't scale with the font selector —
+- Headers and large display text don't scale with the font selector:
   the pixel-arcade typeface is designed for specific sizes.

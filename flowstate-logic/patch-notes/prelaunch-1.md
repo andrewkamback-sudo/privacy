@@ -1,24 +1,24 @@
 ---
 layout: default
-title: Beta 1 patch notes
+title: Prelaunch 1 patch notes
 ---
 
-# Beta 1 — June 2026
+# Prelaunch 1 - June 2026
 
-First entry on the Beta line. The alpha series ran on `0.8.x`; `0.9.0`
-opened the Beta with the Logic First curriculum surfaced on the main
+First entry on the prelaunch line. The alpha series ran on `0.8.x`; `0.9.0`
+opened the prelaunch track with the Logic First curriculum surfaced on the main
 Learn tab and end-to-end in-app billing live for testers. `0.9.1`
 follows it up with chapter-level Insights for Pro users and an
 across-the-board option-order shuffle.
 
 ## 🚀 New
 
-- **Logic First (Beta) on the Learn tab.** New banner card at the top
+- **Logic First (v1.0.1) on the Learn tab.** New banner card at the top
   of Learn routes to a chapter map showing the 7 chapters + 34
   lessons built on the logic-first teaching model. Ch.1 lessons show
   inline "+ Practice" rows (4 variants each) and the chapter ends
   with a "Through the Tunnel" capstone scenario. Legacy modules stay
-  intact below the banner — existing testers don't lose progression.
+  intact below the banner - existing testers don't lose progression.
 - **In-app billing is live end-to-end.** Pro upgrade flow completes a
   real Google Play purchase via RevenueCat; Pro perks (faster ember
   refill, free hints in Practice, "patient practice" leniency on
@@ -27,7 +27,7 @@ across-the-board option-order shuffle.
   Sale-tier offerings (`minor_sale`, `major_sale`, `mega_sale`) are
   wired and will surface when an event tier is active.
 - **Logic First chapter rows on the Insights tab (Pro).** Pro users
-  who follow the Beta banner now see their progress reflected in
+  who follow the prelaunch banner now see their progress reflected in
   Insights: per-chapter accuracy %, completion fraction ("X of Y
   lessons complete"), capstone status, and a crystal-accented border
   that visually distinguishes the new section from the legacy module
@@ -37,7 +37,7 @@ across-the-board option-order shuffle.
   learner. Applies to the main lesson interaction, mini-checks,
   practice variants, and capstone stages. Shuffle is keyed on the
   surface's stable id, so retries within a single attempt keep the
-  same layout — no confusing mid-attempt reshuffles.
+  same layout - no confusing mid-attempt reshuffles.
 
 ## 🔧 Tuning
 
@@ -57,7 +57,7 @@ across-the-board option-order shuffle.
 
 ## 📝 Notes
 
-- "Beta" status is intentional — the curriculum is the first six
+- "Prelaunch" status is intentional - the curriculum is the first six
   chapters of a logic-first re-author, with Ch.1 fully populated as
   the pilot for practice + capstones. Chapters 2-7 will get their
   practice + capstone passes on the same update cadence.

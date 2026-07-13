@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Beta 4 patch notes
+title: Prelaunch 4 patch notes
 ---
 
-# Beta 4 (0.9.4)
+# Prelaunch 4 (0.9.4)
 
 The Logic First curriculum now grants XP, crystals, cores, daily-goal
-credit, streak progression, and unlocks achievements — the way the
+credit, streak progression, and unlocks achievements - the way the
 classic 18-module bank always has. Until this release Logic First
 only marked progress; none of the reward loop actually fired. That
 ends here.
@@ -25,7 +25,7 @@ ends here.
   - Daily goal, flow streak, and level-ups now all advance from
     Logic First sessions too, not only the legacy question bank.
 - **Inline reward celebration** right on the lesson / capstone
-  screen — a reward card appears below the mini-check with banners
+  screen - a reward card appears below the mini-check with banners
   for daily-goal hit, level-up, flow-saved, chapter complete, and
   curriculum complete, plus stat rows for what you earned. No
   second screen, no extra tap.
