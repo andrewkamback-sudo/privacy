@@ -342,6 +342,14 @@ h1 .accent, h2 .accent { color: var(--color-ember); }
   margin-top: 1.75rem;
 }
 
+.beta-capacity {
+  margin: 1rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .store-badges {
   display: flex;
   flex-wrap: wrap;

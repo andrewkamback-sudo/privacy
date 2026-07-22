@@ -1,6 +1,6 @@
 /* Cinderway Interactive — page enhancements.
 
-   Two responsibilities, kept in one file so every page only loads
+   Page enhancements, kept in one file so every page only loads
    one script:
 
    1. Hamburger nav toggle (mobile). Wired via [data-nav-toggle]
@@ -11,7 +11,11 @@
       bottom-right pixel-art scene in cinderway.css can drift via
       transform as the user scrolls. Rate is -0.18 — image goes
       up subtly as the page goes down. Bails on
-      prefers-reduced-motion. */
+      prefers-reduced-motion.
+
+   3. Waitlist signup enhancement.
+
+   4. TestFlight beta capacity counter. */
 (function () {
   'use strict';
 
@@ -125,7 +129,31 @@
     });
   }
 
+  // ---------- TestFlight beta capacity ----------
+  function initTestFlightCount() {
+    var counter = document.querySelector('[data-testflight-count]');
+    if (!counter || !window.fetch) return;
+
+    fetch('https://koradavnttxpjxbibrbk.supabase.co/functions/v1/testflight-count')
+      .then(function (response) {
+        if (!response.ok) throw new Error('TestFlight count unavailable');
+        return response.json();
+      })
+      .then(function (data) {
+        if (typeof data.testers !== 'number' || typeof data.capacity !== 'number') {
+          throw new Error('Unexpected TestFlight count response');
+        }
+
+        counter.textContent = data.testers.toLocaleString() + ' / ' +
+          data.capacity.toLocaleString() + ' iOS beta spots claimed';
+      })
+      .catch(function () {
+        counter.textContent = 'iOS beta spots available';
+      });
+  }
+
   initNav();
   initParallax();
   initSignup();
+  initTestFlightCount();
 })();

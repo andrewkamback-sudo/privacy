@@ -6,3 +6,5 @@ _site/
 vendor/
 Gemfile.lock
 
+# Private API keys (including App Store Connect AuthKey files)
+*.p8
