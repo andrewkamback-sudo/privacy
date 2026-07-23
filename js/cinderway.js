@@ -146,8 +146,14 @@
           throw new Error('Unexpected TestFlight count response');
         }
 
-        counter.textContent = data.testers.toLocaleString() + ' / ' +
-          data.capacity.toLocaleString() + ' iOS beta spots claimed';
+        var spotsOpen = Math.max(data.capacity - data.testers, 0);
+        var testerLabel = data.testers === 1 ? 'tester enrolled' : 'testers enrolled';
+        var spotLabel = spotsOpen === 1 ? 'spot open' : 'spots open';
+
+        counter.setAttribute('role', 'status');
+        counter.setAttribute('aria-live', 'polite');
+        counter.textContent = data.testers.toLocaleString() + ' ' + testerLabel + ' · ' +
+          spotsOpen.toLocaleString() + ' ' + spotLabel;
       })
       .catch(function () {
         counter.textContent = 'iOS beta spots available';
