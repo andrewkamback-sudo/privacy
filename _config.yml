@@ -4,6 +4,7 @@ markdown: kramdown
 theme: null
 
 exclude:
+  - "*.p8"
   - README.md
   - .gitignore
   - Gemfile
