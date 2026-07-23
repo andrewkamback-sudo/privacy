@@ -338,24 +338,45 @@ h1 .accent, h2 .accent { color: var(--color-ember); }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.85rem;
   margin-top: 1.75rem;
 }
 
 .beta-capacity {
-  margin: 1rem 0 0;
+  margin: 0;
   color: var(--color-muted);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
 
-.store-badges {
+.platform-actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.8rem;
+  align-items: flex-start;
+  gap: 1rem;
   margin-top: 1.6rem;
+}
+
+.ios-beta-option {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: start;
+}
+
+.hero-text-link {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-underline-offset: 0.25em;
+  text-transform: uppercase;
+}
+
+.hero-text-link:hover,
+.hero-text-link:focus-visible {
+  color: var(--color-gold);
 }
 
 .store-badge {
