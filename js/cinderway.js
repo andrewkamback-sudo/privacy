@@ -15,7 +15,9 @@
 
    3. Waitlist signup enhancement.
 
-   4. TestFlight beta capacity counter. */
+   4. TestFlight beta capacity counter.
+
+   5. Expandable screenshot gallery and accessible lightbox. */
 (function () {
   'use strict';
 
@@ -152,8 +154,68 @@
       });
   }
 
+  // ---------- Screenshot gallery ----------
+  function initScreenshotGallery() {
+    var gallery = document.querySelector('#screenshot-gallery');
+    var toggle = document.querySelector('[data-gallery-toggle]');
+    if (!gallery) return;
+
+    var extras = Array.prototype.slice.call(gallery.querySelectorAll('.screenshot-tile.is-extra'));
+    if (toggle && extras.length) {
+      toggle.hidden = false;
+      toggle.addEventListener('click', function () {
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        extras.forEach(function (item) { item.hidden = expanded; });
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        toggle.textContent = expanded
+          ? 'Show ' + extras.length + ' more screenshots'
+          : 'Show fewer screenshots';
+      });
+    }
+
+    if (typeof window.HTMLDialogElement === 'undefined') return;
+
+    var dialog = document.createElement('dialog');
+    dialog.className = 'screenshot-lightbox';
+    dialog.setAttribute('aria-label', 'Screenshot preview');
+    dialog.innerHTML =
+      '<div class="screenshot-lightbox-inner">' +
+        '<button class="screenshot-lightbox-close" type="button" aria-label="Close screenshot preview">&times;</button>' +
+        '<img alt="">' +
+        '<p></p>' +
+      '</div>';
+    document.body.appendChild(dialog);
+
+    var preview = dialog.querySelector('img');
+    var caption = dialog.querySelector('p');
+    var close = dialog.querySelector('button');
+
+    gallery.addEventListener('click', function (event) {
+      var link = event.target.closest && event.target.closest('.screenshot-tile');
+      if (!link) return;
+
+      var thumbnail = link.querySelector('img');
+      if (!thumbnail) return;
+
+      event.preventDefault();
+      preview.src = link.href;
+      preview.alt = thumbnail.alt;
+      caption.textContent = thumbnail.alt;
+      dialog.showModal();
+    });
+
+    close.addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', function () {
+      preview.removeAttribute('src');
+    });
+  }
+
   initNav();
   initParallax();
   initSignup();
   initTestFlightCount();
+  initScreenshotGallery();
 })();
