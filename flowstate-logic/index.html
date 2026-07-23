@@ -194,15 +194,14 @@
               </p>
             </div>
 
-            <!-- Buttondown embed for the "cinderwayinteractive" newsletter. The plain
-                 form already works with JS disabled; js/cinderway.js enhances it to
-                 submit inline without leaving the page. -->
+            <!-- Buttondown handles validation and confirmation in a new tab so the
+                 site never claims a subscription succeeded before it is confirmed. -->
             <form
               class="signup-form"
               action="https://buttondown.com/api/emails/embed-subscribe/cinderwayinteractive"
               method="post"
               target="_blank"
-              data-signup-form
+              rel="noopener"
             >
               <label class="sr-only" for="signup-email">Email address</label>
               <div class="signup-row">
@@ -218,11 +217,9 @@
                 >
                 <button class="button" type="submit">Notify me</button>
               </div>
-              <p class="signup-status" role="status" aria-live="polite" data-signup-status hidden></p>
             </form>
 
-            <!-- Revealed by js/cinderway.js only after a successful signup. -->
-            <div class="signup-cta" data-signup-cta hidden>
+            <div class="signup-cta">
               <p>Want to shape what comes next? Join the Discord and send feedback straight to the developer.</p>
               <a class="button" href="https://discord.gg/YyQDqzVv5k" target="_blank" rel="noopener">Join the Discord</a>
             </div>

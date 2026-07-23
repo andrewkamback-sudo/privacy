@@ -735,15 +735,6 @@ h2 {
 
 .signup-form .button { flex: 0 0 auto; }
 
-.signup-status {
-  margin: 0.9rem 0 0;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--color-muted);
-}
-.signup-status.is-success { color: var(--color-gold); }
-.signup-status.is-error { color: var(--color-brick); }
-
 .signup-cta { margin-top: 1.1rem; }
 .signup-cta p { margin: 0 0 0.75rem; color: var(--color-muted); font-size: 0.95rem; }
 
