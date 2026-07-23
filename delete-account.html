@@ -48,7 +48,7 @@
       <article class="doc">
         <p class="doc-eyebrow">Legal · FlowState Logic</p>
         <h1>Delete your account</h1>
-        <p class="doc-meta">Last updated: June 2026</p>
+        <p class="doc-meta">Last updated: July 2026</p>
 
         <p>FlowState Logic lets you permanently delete your account and all associated data at any time, directly from inside the app. No emails, no forms, no waiting. This page documents the process for transparency and as a public reference required by app stores.</p>
 
@@ -88,8 +88,8 @@
         <p>If your device is lost or broken and you can't open FlowState Logic to delete your account from inside the app, email <a href="mailto:support@cinderwayinteractive.com">support@cinderwayinteractive.com</a> from the email address you used to sign up. We'll verify ownership and complete the deletion on your behalf within 30 days, usually within 24-48 hours.</p>
 
         <h2>What "deletion" technically means here</h2>
-        <p>Your record is removed from our Supabase Auth users table and the corresponding row in our <code>game_states</code> table is deleted via a foreign-key cascade. Both happen atomically in a single transaction - there's no halfway state where one is gone and the other lingers.</p>
-        <p>Backups taken before the deletion may retain your row for the duration of the backup retention window (Supabase's default: 7 days). Backups are encrypted and inaccessible to humans except in a disaster-recovery scenario, and the deleted row never re-enters the live database.</p>
+        <p>Your record is removed from our Supabase Auth users table. That deletion triggers a foreign-key cascade that removes the corresponding row from our <code>game_states</code> table in the same database operation, so your account and cloud-synced progress are removed together.</p>
+        <p>Deletion removes your data from the live service immediately. Supabase may retain residual copies in provider-managed backups or logs for a limited period under its current retention practices. Those residual copies are not used to restore your account and expire according to Supabase's retention schedule.</p>
 
         <h2>Contact</h2>
         <p>Questions about deletion or your data more generally? Email <a href="mailto:support@cinderwayinteractive.com">support@cinderwayinteractive.com</a>.</p>
