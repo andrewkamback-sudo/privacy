@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand-mark" href="/" aria-label="Cinderway Interactive home">
+      <img class="brand-logo" src="/assets/svg/cinderway-logo.png" alt="" width="64" height="64">
+      <img class="brand-wordmark" src="/assets/svg/cinderway-wordmark.png" alt="Cinderway Interactive">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu" data-nav-toggle>
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary" data-site-nav>
+      <ul>
+        <li><a href="/#projects"{% if include.current == 'projects' %} aria-current="page"{% endif %}>Projects</a></li>
+        <li><a href="/flowstate-logic/"{% if include.current == 'flowstate' %} aria-current="page"{% endif %}>FlowState Logic</a></li>
+        <li><a href="/privacy.html"{% if include.current == 'legal' %} aria-current="page"{% endif %}>Legal</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

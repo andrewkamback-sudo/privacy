@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,24 +20,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="site-shell">
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand-mark" href="/" aria-label="Cinderway Interactive home">
-          <img class="brand-logo" src="assets/svg/cinderway-logo.png" alt="" width="64" height="64">
-          <img class="brand-wordmark" src="assets/svg/cinderway-wordmark.png" alt="Cinderway Interactive">
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu" data-nav-toggle>
-          <span class="nav-toggle-icon" aria-hidden="true"></span>
-        </button>
-        <nav class="site-nav" id="site-nav" aria-label="Primary" data-site-nav>
-          <ul>
-            <li><a href="/#projects">Projects</a></li>
-            <li><a href="flowstate-logic/">FlowState Logic</a></li>
-            <li><a href="delete-account.html" aria-current="page">Legal</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    {% include site-header.html current='legal' %}
 
     <div class="container breadcrumb">
       <a href="/">Cinderway Interactive</a>
@@ -101,19 +86,7 @@
       </article>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <span class="footer-brand">
-          <img src="assets/svg/cinderway-logo.png" alt="" width="32" height="32">
-          Cinderway Interactive
-        </span>
-        <nav class="footer-nav" aria-label="Legal">
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="delete-account.html">Delete account</a>
-        </nav>
-      </div>
-    </footer>
+    {% include site-footer.html %}
   </div>
   <script src="/js/cinderway.js" defer></script>
 </body>
