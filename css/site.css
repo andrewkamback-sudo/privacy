@@ -1,0 +1,369 @@
+@import url('./fonts.css');
+@import url('./tokens.css');
+
+/* Cinderway Interactive shared shell: base, background, navigation,
+   footer, breadcrumbs, responsive navigation, and motion preferences. */
+
+/* ---------- 1. Base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-cream);
+  background:
+    radial-gradient(circle at 12% 6%,  rgba(242, 104, 34, 0.14), transparent 26rem),
+    linear-gradient(180deg, #101114 0%, var(--color-ink) 45%, #0b0b0d 100%);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subtle pixel grid overlay — fades out before reaching the bottom scene */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(244, 237, 225, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 237, 225, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 60%);
+  z-index: 0;
+}
+
+/* Decorative pixel-art scene anchored bottom-right.
+
+   Sized to fill most of the screen so the pixel-art castle scene
+   reads as part of the page, but masked so it fades out before
+   reaching the prose / card content area.
+
+   Parallax: the scene is `position: fixed`, so it stays anchored
+   to the viewport while content scrolls past (bg-speed = 0
+   relative to content). The `--parallax-y` variable is driven by
+   js/site.js to add a subtle rate-based offset — image
+   drifts up as the user scrolls down. Reduced-motion users get
+   the static fixed bg only. */
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: clamp(420px, 72vw, 1180px);
+  height: 130vh;
+  background-image: url('../assets/banners/cinderway-scene.png');
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  pointer-events: none;
+  opacity: 0.38;
+  mask-image: linear-gradient(to top, black 38%, transparent 96%),
+              linear-gradient(to left, black 58%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 38%, transparent 96%),
+                      linear-gradient(to left, black 58%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
+  will-change: transform;
+  z-index: 0;
+}
+
+@media (max-width: 760px) {
+  /* Make the scene smaller, more faded, and bottom-anchored so
+     it acts as a backdrop behind content as the user scrolls,
+     without ever competing with text. Mask flips so it fades
+     into the page from the bottom up. */
+  body::after {
+    width: clamp(280px, 90vw, 520px);
+    height: 60vh;
+    opacity: 0.22;
+    mask-image: linear-gradient(to top, black 20%, transparent 92%);
+    -webkit-mask-image: linear-gradient(to top, black 20%, transparent 92%);
+  }
+}
+
+img, svg { max-width: 100%; }
+img.pixelated, .pixelated img { image-rendering: pixelated; image-rendering: crisp-edges; }
+a { color: inherit; }
+
+::selection { background: var(--color-ember); color: var(--color-ink); }
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 100;
+  background: var(--color-gold);
+  color: var(--color-ink);
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.skip-link:focus { top: 1rem; }
+
+.site-shell {
+  position: relative;
+  width: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin-inline: auto;
+}
+
+/* ---------- 2. Header / nav ----------
+   Inverted from the dark page theme: warm cream banner with dark
+   ink-colored links so the wordmark + bare-forge logo (both
+   transparent PNGs) sit cleanly without needing a backplate. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 4px solid var(--color-brick);
+  background: rgba(244, 237, 225, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 96px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand-mark:focus-visible {
+  outline: 2px solid var(--color-brick);
+  outline-offset: 4px;
+}
+
+.brand-logo {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+  flex: 0 0 auto;
+}
+
+.brand-wordmark {
+  height: 52px;
+  width: auto;
+  image-rendering: pixelated;
+  display: block;
+}
+
+/* Hamburger button — hidden on desktop, shown ≤ 760px via the
+   responsive block. Icon is a single 24×2px bar with two
+   pseudo-element bars stacked above/below. When [aria-expanded]
+   flips to true, the bars rotate into an X. */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid var(--color-ink);
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(176, 58, 46, 0.10);
+  outline: 2px solid var(--color-brick);
+  outline-offset: 2px;
+}
+
+.nav-toggle-icon,
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.nav-toggle-icon {
+  position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-icon::before { top: -7px; }
+.nav-toggle-icon::after  { top:  7px; }
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-flex;
+  padding: 0.6rem 0.85rem;
+  text-decoration: none;
+  color: var(--color-ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--color-brick);
+  background: rgba(176, 58, 46, 0.10);
+  outline: 2px solid var(--color-brick);
+  outline-offset: 2px;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-brick);
+}
+
+/* ---------- 8. Footer ----------
+   Mirror the header inversion: warm cream bar with dark ink text +
+   brick accents. Keeps the brick stripe along the top edge to echo
+   the header's bottom stripe. */
+.site-footer {
+  padding: 1.75rem 0;
+  border-top: 4px solid var(--color-brick);
+  background: rgba(244, 237, 225, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--color-ink);
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--color-ink);
+}
+
+.footer-brand img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.footer-nav {
+  display: inline-flex;
+  gap: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer-nav a {
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible { color: var(--color-brick); }
+
+/* ---------- Breadcrumb (for sub-sites) ---------- */
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding: 0.85rem 0 0;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  letter-spacing: 0.04em;
+}
+
+.breadcrumb a {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible { color: var(--color-ember); }
+
+.breadcrumb-sep { margin: 0 0.4rem; color: var(--color-charcoal); }
+
+/* ---------- Responsive shell ---------- */
+@media (max-width: 760px) {
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  .header-inner { flex-wrap: wrap; min-height: 76px; padding-block: 0.5rem; }
+  .brand-logo { width: 48px; height: 48px; }
+  .brand-wordmark { height: 36px; }
+  .site-nav { flex: 1 0 100%; }
+  .js .header-inner { flex-wrap: nowrap; }
+  .js .nav-toggle { display: inline-flex; }
+  .js .site-nav { flex: initial; position: absolute; top: 100%; left: 0; right: 0; background: rgba(244, 237, 225, 0.97); border-bottom: 4px solid var(--color-brick); box-shadow: var(--shadow-soft); transform: translateY(-12px); opacity: 0; visibility: hidden; transition: transform var(--transition-fast), opacity var(--transition-fast), visibility var(--transition-fast); }
+  .js .site-nav.is-open { transform: translateY(0); opacity: 1; visibility: visible; }
+  .site-nav ul { flex-direction: column; align-items: stretch; gap: 0; padding: 0.4rem 1rem 0.6rem; }
+  .site-nav a { display: block; width: 100%; padding: 0.85rem; font-size: 0.82rem; letter-spacing: 0.08em; border-bottom: 1px solid rgba(27, 27, 30, 0.08); }
+  .site-nav li:last-child a { border-bottom: none; }
+  .breadcrumb { padding-top: 0.6rem; font-size: 0.72rem; white-space: normal; line-height: 1.5; }
+  h1 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  h2 { font-size: clamp(1.25rem, 5.5vw, 1.8rem); }
+}
+@media (max-width: 380px) {
+  .brand-logo { width: 40px; height: 40px; }
+  .brand-wordmark { height: 30px; }
+  .brand-mark { gap: 0.55rem; }
+  .container { width: min(calc(100% - 1.5rem), var(--max-width)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+}

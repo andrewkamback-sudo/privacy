@@ -1,0 +1,108 @@
+/* ---------- 6. Screenshot gallery ---------- */
+.screenshot-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.2rem);
+  align-items: start;
+}
+
+.screenshot-tile[hidden],
+.gallery-toggle[hidden] {
+  display: none;
+}
+
+.screenshot-tile {
+  grid-column: span 3;
+  display: block;
+  padding: 0.5rem;
+  border: var(--border-pixel);
+  background:
+    linear-gradient(145deg, rgba(242, 104, 34, 0.12), transparent 46%),
+    #0d0e11;
+  box-shadow: 6px 6px 0 #000;
+  text-decoration: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.screenshot-tile.is-landscape {
+  grid-column: span 6;
+}
+
+.screenshot-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(244, 237, 225, 0.16);
+  background: #050506;
+}
+
+.screenshot-tile:hover,
+.screenshot-tile:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 #000;
+  outline: 2px solid var(--color-ember);
+  outline-offset: 2px;
+}
+
+.gallery-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.screenshot-lightbox {
+  width: min(92vw, 1100px);
+  max-height: 92vh;
+  padding: 0;
+  border: var(--border-pixel);
+  background: #0d0e11;
+  color: var(--color-cream);
+  box-shadow: 10px 10px 0 #000;
+}
+
+.screenshot-lightbox::backdrop {
+  background: rgba(5, 5, 6, 0.88);
+  backdrop-filter: blur(3px);
+}
+
+.screenshot-lightbox-inner {
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.screenshot-lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(92vh - 6rem);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.screenshot-lightbox p {
+  margin: 0;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.screenshot-lightbox-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--color-ember);
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .screenshot-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .screenshot-tile, .screenshot-tile.is-landscape { grid-column: span 1; }
+}
+@media (max-width: 380px) { .screenshot-gallery { grid-template-columns: 1fr; } }
