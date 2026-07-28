@@ -70,7 +70,8 @@ h1 .accent, h2 .accent { color: var(--color-ember); }
   margin-top: 1.75rem;
 }
 
-.beta-capacity {
+.beta-capacity,
+.platform-note {
   margin: 0;
   color: var(--color-muted);
   font-size: 0.85rem;
@@ -86,7 +87,8 @@ h1 .accent, h2 .accent { color: var(--color-ember); }
   margin-top: 1.6rem;
 }
 
-.ios-beta-option {
+.ios-beta-option,
+.web-play-option {
   display: grid;
   gap: 0.65rem;
   justify-items: start;

@@ -7,6 +7,12 @@ title: Patch notes - FlowState Logic
 
 Latest changes, version by version. Newest at the top.
 
+- **[v1.1.0](v1.1.0.md)** - July 2026
+  A brand-new look · Camp Home base · biome cave-route Lesson Map ·
+  Lesson Rooms · merged Shop + Fitting Room · expedition achievement
+  board · Stats tab · now playable in the browser · Pro Family plan ·
+  Sign in with Apple · ~20MB smaller download
+
 - **[v1.0.1](v1.0.1.md)** - July 2026
   Post-launch bug fixes (ember gate, Google sign-in, streak calendar, Profile
   stats, save-progress prompt) · accuracy-scaled lesson rewards · practice +
