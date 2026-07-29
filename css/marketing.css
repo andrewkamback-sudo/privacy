@@ -138,32 +138,39 @@ h1 .accent, h2 .accent { color: var(--color-ember); }
 }
 
 .social-proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
   margin-top: 1.4rem;
 }
 
-/* Not a .store-badge: that class pins a fixed height and a max-width
-   narrower than this badge's 250x54, which would squash it. */
-.product-hunt-badge {
+/* Not .store-badge: that class pins a fixed height and a max-width
+   narrower than these badges, which would squash them. Each badge sets
+   its own width below so the supplied aspect ratio is preserved. */
+.social-badge {
   display: inline-block;
-  width: 250px;
   max-width: 100%;
   text-decoration: none;
   transition: transform var(--transition-fast), filter var(--transition-fast);
 }
 
-.product-hunt-badge:hover,
-.product-hunt-badge:focus-visible {
+.social-badge:hover,
+.social-badge:focus-visible {
   transform: translateY(-2px);
   filter: drop-shadow(0 0 0.45rem rgba(242, 104, 34, 0.45));
   outline: 2px solid var(--color-gold);
   outline-offset: 3px;
 }
 
-.product-hunt-badge img {
+.social-badge img {
   display: block;
   width: 100%;
   height: auto;
 }
+
+.social-badge.product-hunt { width: 250px; }
+.social-badge.launch-llama { width: 200px; }
 
 .button {
   display: inline-flex;

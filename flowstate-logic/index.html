@@ -96,13 +96,13 @@
               </p>
             </div>
           </div>
+          <!-- Badge art is self-hosted so page loads never contact these
+               third parties (see privacy.html "service providers"). -->
           <div class="social-proof">
-            <!-- Badge art is self-hosted so page loads never contact
-                 Product Hunt (see privacy.html "service providers").
-                 It shows "???" until the launch has votes; refresh with:
+            <!-- Shows "???" until the launch has votes; refresh with:
                  curl -sL "https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1209212&theme=dark" -o assets/badges/product-hunt-featured.svg -->
             <a
-              class="product-hunt-badge"
+              class="social-badge product-hunt"
               href="https://www.producthunt.com/products/flowstate-logic?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-flowstate-logic"
               target="_blank"
               rel="noopener noreferrer"
@@ -112,6 +112,21 @@
                 alt="Find FlowState Logic on Product Hunt"
                 width="250"
                 height="54"
+              >
+            </a>
+            <!-- Source art is 600x159 / 122KB; downscaled to 2x and
+                 palette-quantized to 15KB. Re-do that on any refresh. -->
+            <a
+              class="social-badge launch-llama"
+              href="https://tools.launchllama.co?utm_source=badge&amp;utm_medium=referral"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="../assets/badges/launch-llama-featured.png"
+                alt="As seen on Launch Llama Newsletter"
+                width="200"
+                height="50"
               >
             </a>
           </div>
