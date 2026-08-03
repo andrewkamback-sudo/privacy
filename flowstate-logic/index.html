@@ -6,11 +6,15 @@
   <meta charset="utf-8">
   <script src="/js/init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FlowState Logic - Cinderway Interactive</title>
-  <meta name="description" content="Pixel-art programming lessons that fit in your pocket. A FlowState Logic project from Cinderway Interactive.">
+  <!-- Title and description target the problem people actually search for
+       ("what comes after Scratch") rather than the product's name and
+       aesthetic. Nobody types "pixel-art programming lessons"; parents and
+       teachers do type some form of "my kid finished Scratch, now what". -->
+  <title>FlowState Logic - the step between Scratch and real code</title>
+  <meta name="description" content="Finished Scratch but not ready for Python? Learn how loops, conditions and variables actually work before writing a line of syntax. Free in your browser.">
   <meta name="theme-color" content="#1B1B1E">
-  <meta property="og:title" content="FlowState Logic">
-  <meta property="og:description" content="Pixel-art programming lessons that fit in your pocket.">
+  <meta property="og:title" content="FlowState Logic - the step between Scratch and real code">
+  <meta property="og:description" content="Finished Scratch but not ready for Python? Learn how loops, conditions and variables actually work before writing a line of syntax.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.cinderwayinteractive.com/flowstate-logic/">
   <meta property="og:site_name" content="Cinderway Interactive">
@@ -19,8 +23,8 @@
   <meta property="og:image:height" content="1600">
   <meta property="og:image:alt" content="FlowState Logic chapter map with programming lessons and O.B.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FlowState Logic">
-  <meta name="twitter:description" content="Pixel-art programming lessons that fit in your pocket.">
+  <meta name="twitter:title" content="FlowState Logic - the step between Scratch and real code">
+  <meta name="twitter:description" content="Finished Scratch but not ready for Python? Learn how loops, conditions and variables actually work before writing a line of syntax.">
   <meta name="twitter:image" content="https://www.cinderwayinteractive.com/assets/screenshots/flowstate-logic/tablet/Screenshot_1782489753.png">
 
   <link rel="canonical" href="https://www.cinderwayinteractive.com/flowstate-logic/">
@@ -28,13 +32,6 @@
   <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="../css/marketing.css">
   <link rel="stylesheet" href="../css/gallery.css">
-
-  <!-- Analytics - cookieless, no consent banner needed. Register
-       cinderwayinteractive.com at https://plausible.io and this goes live;
-       until then it's inert. Prefer a free tool? Swap just this one <script>
-       line for your Cloudflare Web Analytics / Umami snippet - nothing else
-       on the page changes. -->
-  <script defer data-domain="cinderwayinteractive.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -51,12 +48,16 @@
     <main id="main">
       <section class="hero">
         <div class="container">
-          <p class="kicker">EdTech · React Native · Pixel art</p>
+          <!-- Kicker names the audience, not the tech stack. A learner or
+               parent landing here does not care that it is React Native. -->
+          <p class="kicker">After Scratch · Before Python · Ages 11+</p>
           <h1>FlowState <span class="accent">Logic.</span></h1>
           <p class="hero-copy">
-            A pixel-art app that teaches the logic behind programming before drowning learners
-            in syntax. Python fundamentals across 10 chapters and 49 lessons, a capstone at the end of
-            every chapter, a customizable mascot, and a streak system built to be forgiving instead of punishing.
+            Scratch teaches you to think in loops and conditions. Then the usual next step is
+            Python, where that thinking gets buried under colons, indentation and quote marks.
+            FlowState Logic is the step in between: you solve the logic first in a game world,
+            and the real Python shows up at the end as the written form of something you already
+            worked out. 10 chapters, 49 lessons, free to learn.
           </p>
           <div class="platform-actions" aria-label="Get FlowState Logic">
             <a
@@ -133,6 +134,74 @@
           <div class="hero-actions">
             <a class="button secondary" href="#screenshots">See screenshots</a>
             <a class="hero-text-link" href="patch-notes/">Latest patch notes →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- The page's one keyword-bearing section, deliberately placed above
+           screenshots. It is written to be useful to someone who never
+           installs anything: the honest limits are stated, not buried. -->
+      <section class="section" id="after-scratch" aria-labelledby="after-scratch-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Who it's for</span>
+            <h2 id="after-scratch-title">Finished Scratch? <span class="accent">Here's the gap.</span></h2>
+            <p>
+              Block coding does its job well. A learner who has built things in Scratch already
+              understands sequence, repetition and branching. The problem is what comes next.
+              We wrote up the whole thing, including the options that aren't ours:
+              <a href="what-comes-after-scratch.html">What comes after Scratch?</a>
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <div class="project-card static">
+              <div class="project-card-header">
+                <h3 class="project-card-title">The wall most learners hit</h3>
+              </div>
+              <p class="project-card-blurb">
+                The standard advice is "now learn Python." But a first Python lesson spends its
+                energy on syntax: where the colon goes, why the indentation matters, why the
+                quotes have to match. The logic the learner already had gets lost behind typing
+                errors, and the conclusion they draw is that they are bad at coding.
+              </p>
+            </div>
+
+            <div class="project-card static">
+              <div class="project-card-header">
+                <h3 class="project-card-title">What we do instead</h3>
+              </div>
+              <p class="project-card-blurb">
+                Every lesson starts with a situation, not a code block. You work out what should
+                happen, you see it play out, and only then does the same idea appear as plain
+                pseudocode and finally as real Python. Syntax arrives as a translation of
+                something you already solved, which is a much smaller thing to learn.
+              </p>
+            </div>
+
+            <div class="project-card static">
+              <div class="project-card-header">
+                <h3 class="project-card-title">Who it suits</h3>
+              </div>
+              <p class="project-card-blurb">
+                Roughly ages 11 and up, since the lessons are read rather than watched.
+                Homeschoolers, middle and high schoolers, and adults who bounced off a Python
+                course once and assumed the problem was them. Works in a browser on a
+                Chromebook, so there is nothing to install on a school device.
+              </p>
+            </div>
+
+            <div class="project-card static">
+              <div class="project-card-header">
+                <h3 class="project-card-title">What it is not</h3>
+              </div>
+              <p class="project-card-blurb">
+                Not a full Python course, and not a replacement for one. It covers the
+                fundamentals through to lists, dictionaries and strings, and it is meant to make
+                the real Python course you take afterwards feel readable instead of foreign.
+                Learning is free. Cosmetics are the only thing that costs anything.
+              </p>
+            </div>
           </div>
         </div>
       </section>

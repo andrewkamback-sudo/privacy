@@ -292,6 +292,16 @@ h2 {
   outline: none;
 }
 
+/* Informational cards that are not links. Same frame as .project-card so
+   the page stays visually consistent, minus the hover lift — that motion
+   reads as "clickable" and there is nothing to click. */
+.project-card.static:hover,
+.project-card.static:focus-visible {
+  transform: none;
+  box-shadow: 6px 6px 0 #000;
+  outline: none;
+}
+
 .project-card-header {
   display: flex;
   align-items: baseline;

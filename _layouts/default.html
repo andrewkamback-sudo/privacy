@@ -4,29 +4,34 @@
   <meta charset="utf-8">
   <script src="/js/init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} - FlowState Logic</title>
-  <meta name="description" content="{{ page.title }} for FlowState Logic, a Cinderway Interactive project.">
+  <!-- `seo_title` and `description` are optional front-matter overrides.
+       Pages that omit them keep the previous auto-generated strings byte for
+       byte, so patch notes and legal pages are unaffected. Articles set them,
+       because "<Title> for FlowState Logic, a Cinderway Interactive project"
+       is not something a human would ever search for. -->
+  <!-- xml_escape on every templated attribute. Without it a description
+       containing a double quote silently truncates the meta tag at that
+       character, which looks fine in the source file and is only visible in
+       the rendered HTML. -->
+  <title>{% if page.seo_title %}{{ page.seo_title | xml_escape }}{% else %}{{ page.title | xml_escape }} - FlowState Logic{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description | xml_escape }}{% else %}{{ page.title | xml_escape }} for FlowState Logic, a Cinderway Interactive project.{% endif %}">
   <meta name="theme-color" content="#1B1B1E">
-  <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{{ page.title }} for FlowState Logic, a Cinderway Interactive project.">
+  <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title | xml_escape }}{% else %}{{ page.title | xml_escape }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description | xml_escape }}{% else %}{{ page.title | xml_escape }} for FlowState Logic, a Cinderway Interactive project.{% endif %}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:site_name" content="Cinderway Interactive">
   <meta property="og:image" content="{{ '/assets/icons/icon-512.png' | absolute_url }}">
   <meta property="og:image:alt" content="FlowState Logic app icon">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ page.title }}">
-  <meta name="twitter:description" content="{{ page.title }} for FlowState Logic.">
+  <meta name="twitter:title" content="{% if page.seo_title %}{{ page.seo_title | xml_escape }}{% else %}{{ page.title | xml_escape }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | xml_escape }}{% else %}{{ page.title | xml_escape }} for FlowState Logic.{% endif %}">
   <meta name="twitter:image" content="{{ '/assets/icons/icon-512.png' | absolute_url }}">
 
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/legal.css">
-
-  <!-- Analytics - cookieless, no consent banner needed. See flowstate-logic/index.html
-       for swap notes if you use a different provider. -->
-  <script defer data-domain="cinderwayinteractive.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -38,8 +43,10 @@
       <a href="/">Cinderway Interactive</a>
       <span class="breadcrumb-sep">/</span>
       <a href="/flowstate-logic/">FlowState Logic</a>
-      <span class="breadcrumb-sep">/</span>
-      <a href="/flowstate-logic/patch-notes/">Patch notes</a>
+      {% unless page.skip_patch_notes_crumb %}
+        <span class="breadcrumb-sep">/</span>
+        <a href="/flowstate-logic/patch-notes/">Patch notes</a>
+      {% endunless %}
       {% if page.title %}
         <span class="breadcrumb-sep">/</span>
         <span aria-current="page">{{ page.title }}</span>
@@ -48,7 +55,7 @@
 
     <main id="main" class="doc-main">
       <article class="doc">
-        <p class="doc-eyebrow">Patch notes</p>
+        <p class="doc-eyebrow">{{ page.eyebrow | default: 'Patch notes' }}</p>
         {{ content }}
       </article>
     </main>
