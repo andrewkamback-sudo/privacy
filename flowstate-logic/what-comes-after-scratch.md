@@ -10,7 +10,8 @@ eyebrow: Guide for parents
 # What comes after Scratch?
 
 Every parent who watches a kid get good at Scratch eventually asks the same
-question. They've built games. They understand loops. They've made a sprite do
+question. They've built games. They can make something repeat, or happen only
+when a condition is met, without ever calling it that. They've made a sprite do
 something genuinely clever. So what now?
 
 The usual answer is "now they should learn a real language, probably Python."
@@ -23,17 +24,22 @@ This is an attempt at a more honest answer.
 ## Scratch taught more than people give it credit for
 
 It's fashionable to dismiss block coding as "not real programming." That's
-backwards. A kid who has shipped a working Scratch project already understands:
+backwards. A kid who has shipped a working Scratch project already knows how to:
 
-- **Sequence.** Instructions happen in order, and the order changes the result.
-- **Loops.** Repeat this ten times, or repeat it until something is true.
-- **Conditionals.** If the sprite touches the edge, do this instead.
-- **Variables.** A score that goes up, a lives counter that goes down.
-- **Events.** When this happens, run that.
+- **Do things in a specific order**, and knows that changing the order changes
+  the result. (Programmers call this *sequence*.)
+- **Repeat something**, either a set number of times or until something
+  becomes true. (This is a *loop*.)
+- **Make a decision**, like "if the sprite touches the edge, do this instead."
+  (This is a *conditional*.)
+- **Keep track of a number that changes**, like a score that climbs or a
+  lives counter that drops. (This is a *variable*.)
+- **React to something happening**, like a click or a collision. (This is an
+  *event*.)
 
-That is genuinely most of the conceptual furniture of programming. Someone who
-has it is not a beginner in the way an adult opening a Python book for the
-first time is a beginner.
+That's genuinely most of the mental toolkit programming runs on, even if
+nobody ever used those words. A kid who has it is not a beginner in the way an
+adult opening a Python book for the first time is a beginner.
 
 So if they know all that, why does the next step go so badly?
 
@@ -106,9 +112,10 @@ the Scratch feel.
 eventually. The failure mode is starting here directly from Scratch with
 nothing in between.
 
-**Python with turtle graphics.** A decent bridge in its own right, because the
-output is visual and immediate, which keeps the Scratch-like feedback loop while
-introducing text syntax.
+**Python with turtle graphics** (small Python programs that draw pictures on
+screen by steering a little on-screen turtle around). A decent bridge in its
+own right, because the output is visual and immediate, which keeps the
+Scratch-like feedback loop while introducing actual code.
 
 Notice that most of these are free. Be skeptical of anyone, including us, who
 tells you the answer requires a subscription.
@@ -135,14 +142,15 @@ That's the app we make, so read this with appropriate suspicion.
 
 FlowState Logic is built specifically for step two above. Every lesson starts
 with a situation rather than a code block. You work out what should happen, you
-watch it play out, and only then does the same idea appear as plain pseudocode
-and finally as real Python. The point is that when the syntax shows up, it's a
-translation of something the learner already solved, which is a much smaller
-thing to absorb than a rule they've been handed cold.
+watch it play out, and only then does the same idea appear as plain English
+steps and finally as real Python. The point is that when the code shows up,
+it's a translation of something the learner already solved, which is a much
+smaller thing to absorb than a rule they've been handed cold.
 
-It covers the fundamentals through lists, dictionaries and strings. It runs in a
-browser, so a school Chromebook works with nothing to install, and it's also on
-Android and in beta on iOS.
+It covers the fundamentals through more advanced building blocks like lists
+and dictionaries (ways of storing and organizing a bunch of data at once). It
+runs in a browser, so a school Chromebook works with nothing to install, and
+it's also on Android and in beta on iOS.
 
 What it is not: a full Python course, or a replacement for one. It's the bridge,
 and it's honest about ending where a real Python course should start. Learning is
