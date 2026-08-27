@@ -1,0 +1,110 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="/js/init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy - FlowState Reasoning</title>
+  <meta name="description" content="Privacy policy for FlowState Reasoning.">
+  <meta name="theme-color" content="#1B1B1E">
+
+  <link rel="canonical" href="https://www.cinderwayinteractive.com/flowstate-reasoning/privacy.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/legal.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="site-shell">
+    {% include site-header.html current='legal' %}
+
+    <div class="container breadcrumb">
+      <a href="https://www.cinderwayinteractive.com/">Cinderway Interactive</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>FlowState Reasoning</span>
+      <span class="breadcrumb-sep">/</span>
+      <span aria-current="page">Privacy Policy</span>
+    </div>
+
+    <main id="main" class="doc-main">
+      <article class="doc">
+        <p class="doc-eyebrow">Legal · FlowState Reasoning</p>
+        <h1>Privacy Policy</h1>
+        <p class="doc-meta">Operator: Cinderway Interactive, Nokomis, Florida, United States<br>Last updated: 27 August 2026</p>
+
+        <div class="notice">
+          <p>This policy is for FlowState Reasoning, the adult / professional product. It is not the policy for FlowState Logic. Logic keeps its own pages at <a href="/privacy.html">/privacy.html</a>.</p>
+        </div>
+
+        <h2>1. Who this is for</h2>
+        <p>Reasoning is built for adults. You must be 18 or older to create an account. It is not a child, school, or student product. If we later ship education features, those will have a separate privacy profile.</p>
+
+        <h2>2. What we collect</h2>
+        <p><strong>Account.</strong> The email address you use to sign in. We send a one-time code to that address. We do not use passwords, and we do not sign you in with Google.</p>
+        <p><strong>Session.</strong> A server-side session, delivered as an <code>HttpOnly</code> cookie. We store a keyed digest of the session token, not the token itself.</p>
+        <p><strong>Learning record.</strong> Diagnostic answers, activity attempts, traces of those attempts, mastery snapshots, your reasoning profile, onboarding state, and optional feedback you submit. This is how the product adapts and how we tell whether it is actually teaching.</p>
+        <p><strong>Billing.</strong> If you subscribe, Stripe processes the payment. We store Stripe customer / subscription identifiers and entitlement state so we can unlock Pro. We do not see your card number or billing address.</p>
+        <p><strong>Product events.</strong> We record domain events (for example sign-in, diagnostic completed, attempt scored) so we can operate, debug, and improve the product. These are not advertising profiles.</p>
+        <p>We do not collect your legal name, precise location, contacts, photos, or advertising identifiers. We do not sell your data.</p>
+
+        <h2>3. Why</h2>
+        <ul>
+          <li>to create and keep your account</li>
+          <li>to run the diagnostic, recommendations, and practice</li>
+          <li>to take payment and honor Pro access</li>
+          <li>to grant founding / welcome rewards</li>
+          <li>to fix failures and understand where learners stall</li>
+        </ul>
+
+        <h2>4. Who else sees it</h2>
+        <p>Only processors that run the service:</p>
+        <ul>
+          <li><strong>Supabase</strong> — PostgreSQL hosting. We do not use Supabase Auth. Identity is email codes in our API.</li>
+          <li><strong>Resend</strong> — delivers sign-in codes from our mail domain.</li>
+          <li><strong>Stripe</strong> — checkout, invoices, and the customer portal.</li>
+        </ul>
+        <p>If we add crash reporting (for example Sentry) later, this policy will name it before we turn it on. We do not currently send Reasoning data to advertising or analytics vendors.</p>
+        <p>Each processor acts under its own terms, only for the jobs above.</p>
+
+        <h2>5. Code you write in the product</h2>
+        <p>Practice code runs in a sandbox: time and memory limits, no production network, no secrets, no production filesystem. We keep attempts and traces as part of your learning record. We do not run your code on the API process.</p>
+
+        <h2>6. Cookies</h2>
+        <p>The session cookie is what keeps you signed in. It is required for the signed-in product. We do not use it for advertising.</p>
+
+        <h2>7. How long we keep it</h2>
+        <ul>
+          <li>Sign-in codes are short-lived. Spent and expired challenges are pruned.</li>
+          <li>Account and learning record last until you ask us to delete the account, unless a longer period is required for billing, tax, or a legal hold.</li>
+          <li>Billing records last as long as Stripe and tax rules require.</li>
+          <li>Domain events: while the account is open, then 24 months after deletion or last activity, whichever we implement first.</li>
+        </ul>
+
+        <h2>8. Your choices</h2>
+        <p>There is not yet an in-product delete-account control. Email <a href="mailto:support@cinderwayinteractive.com">support@cinderwayinteractive.com</a> from the address on the account and we will delete the learning record we control. Stripe may retain payment records they are required to keep.</p>
+        <p>You can cancel a subscription in the Stripe customer portal. Access lasts until the end of the period you already paid.</p>
+        <p>Where law gives you more (access, correction, portability, restriction), email the same address.</p>
+
+        <h2>9. Security</h2>
+        <p>Traffic is encrypted in transit. Data at rest uses our host's standard encryption. No method is perfect. Do not put secrets into practice code or feedback.</p>
+
+        <h2>10. Changes</h2>
+        <p>If we change this policy in a material way, we will post the new version and, when we have the product surface for it, tell signed-in users before it takes effect.</p>
+
+        <h2>11. Contact</h2>
+        <p>Cinderway Interactive, Nokomis, Florida, United States, <a href="mailto:support@cinderwayinteractive.com">support@cinderwayinteractive.com</a></p>
+
+        <div class="notice">
+          <p>This page is hosted by Cinderway Interactive as the canonical privacy policy for FlowState Reasoning. See also the <a href="terms.html">Terms of Service</a>.</p>
+        </div>
+      </article>
+    </main>
+
+    {% include site-footer.html %}
+  </div>
+  <script src="/js/site.js" defer></script>
+</body>
+</html>
